@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="contour.svg">
+  <defs
+     id="defs4">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3343">
+      <rect
+         ry="2.5"
+         y="706.64789"
+         x="582.85712"
+         height="788.57141"
+         width="831.42859"
+         id="rect3345"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:5;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3353">
+      <rect
+         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:5;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+         id="rect3355"
+         width="831.42859"
+         height="788.57141"
+         x="-878.85718"
+         y="702.07648"
+         ry="2.5" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3401">
+      <rect
+         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:5;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+         id="rect3403"
+         width="831.42859"
+         height="788.57141"
+         x="-624.57135"
+         y="-317.92352"
+         ry="2.5" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3405">
+      <rect
+         ry="2.5"
+         y="-209.3521"
+         x="986.85724"
+         height="788.57141"
+         width="831.42859"
+         id="rect3407"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:5;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="234.83086"
+     inkscape:cy="496.59747"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1615"
+     inkscape:window-height="1026"
+     inkscape:window-x="65"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g3094"
+       inkscape:export-filename="/home/brianlocal/Dropbox/NRSA/figs/contour.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <image
+         transform="matrix(0.44624233,0,0,0.44624233,408.32126,138.85856)"
+         clip-path="url(#clipPath3353)"
+         y="634.93359"
+         x="-1321.7858"
+         id="image3224"
+         xlink:href="file:///home/brianlocal/Documents/Stefan%20Gcell/BOClut/figs/50fig.png"
+         height="932"
+         width="1615" />
+      <image
+         transform="matrix(0.44201637,0,0,0.44420858,116.08028,130.04509)"
+         clip-path="url(#clipPath3343)"
+         y="660.64795"
+         x="172.5"
+         id="image3234"
+         xlink:href="file:///home/brianlocal/Documents/Stefan%20Gcell/BOClut/figs/50FigE.png"
+         height="932"
+         width="1615" />
+      <image
+         transform="matrix(0.44238616,0,0,0.44366715,-63.846872,190.48155)"
+         clip-path="url(#clipPath3405)"
+         y="-267.92352"
+         x="578.21429"
+         id="image3254"
+         xlink:href="file:///home/brianlocal/Documents/Stefan%20Gcell/BOClut/figs/50nofigE.png"
+         height="932"
+         width="1615" />
+      <image
+         transform="matrix(0.44649119,0,0,0.44649119,281.2385,234.20643)"
+         clip-path="url(#clipPath3401)"
+         y="-367.92352"
+         x="-1036.0715"
+         id="image3244"
+         xlink:href="file:///home/brianlocal/Documents/Stefan%20Gcell/BOClut/figs/50nofig.png"
+         height="932"
+         width="1615" />
+      <rect
+         ry="2.8634894"
+         y="100.64521"
+         x="21.994137"
+         height="340.16516"
+         width="338.26141"
+         id="rect3453"
+         style="fill:none;stroke:#000000;stroke-width:2.33246946;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <rect
+         style="fill:none;stroke:#000000;stroke-width:2.33246946;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+         id="rect4223"
+         width="338.26141"
+         height="340.16516"
+         x="21.994137"
+         y="100.64521"
+         ry="2.8634894" />
+      <rect
+         ry="2.8634894"
+         y="100.64521"
+         x="378.57797"
+         height="340.16516"
+         width="338.26141"
+         id="rect4229"
+         style="fill:none;stroke:#000000;stroke-width:2.33246946;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <rect
+         ry="2.8634894"
+         y="452.17828"
+         x="21.994137"
+         height="340.16516"
+         width="338.26141"
+         id="rect4231"
+         style="fill:none;stroke:#000000;stroke-width:2.33246946;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <rect
+         style="fill:none;stroke:#000000;stroke-width:2.33246946;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+         id="rect4233"
+         width="338.26141"
+         height="340.16516"
+         x="378.57797"
+         y="453.18845"
+         ry="2.8634894" />
+    </g>
+  </g>
+</svg>
