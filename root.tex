@@ -51,6 +51,25 @@
 
 %\makeglossary % enable the glossary
 
+
+% Ernst's customary preamble definitions
+\long\def\comment#1{} %%% to comment out a section of text
+\usepackage{xspace}
+\newcommand{\ie}[0]{{\em i.e.}\ }
+\newcommand{\eg}[0]{{\em e.g.}\ }
+\newcommand{\etal}[0]{{\em et al.}\xspace }
+\newcommand{\etc}[0]{{\em etc.}\xspace}
+\newcommand{\vs}[0]{{\em vs.}\xspace}
+\newcommand{\vv}[0]{{\em vice-versa}\xspace}
+\newcommand{\via}[0]{{\em via}\xspace}
+
+%bh Useful additions to base thesis template
+\usepackage{pdfpages} %for including personal CV as pdf at end of file
+
+
+\includeonly{Intro/chapter1} % added to compile chapters separately (comment out for full thesis)
+
+
 \begin{document}
 
 \title{Grouping mechanisms for object-based vision and attention}
@@ -63,8 +82,11 @@
 
 
 % add your chapters, best way is to have separate TeX files for each chapter
-\include{chapter0}
-\include{chapter1}
+\include{Intro/chapter1}
+\include{Contour/chapter2}
+\include{NaturalImage/chapter3}
+\include{3D-Surface/chapter4}
+\include{3D-Saliency/chapter5}
 
 \include{appendix}
 
@@ -74,20 +96,33 @@
 \bibliographystyle{IEEEtran}
 \bibliography{thesis}
 
-\begin{vita}
 
-\begin{wrapfigure}{l}{0pt}
-\includegraphics[width=2in,height=2.5in,clip,keepaspectratio]{bhh_headshot}
-\end{wrapfigure}
+%bh Add CV to end of file (comment out for now)
+%\includepdf[pages=-]{CV/CV_Brian_Hu.pdf}
 
-Brian H. Hu received the Sc.\ B.\ degree in Bioengineering
-from the University of Pittsburgh in May 2011,  and enrolled in the Biomedical Engineering Ph.D.\ program at Johns Hopkins University in August 2011.  He was a recipient of the University Honors College full-tuition scholarship, and also the Swanson School of Engineering Outstanding Senior Award and the Department of Bioengineering Outstanding Student of the Year Award in 2011. His research involves modeling the neural mechanisms of perceptual organization and selective attention, and his papers have been published in Vision Research and Journal of Computational Neuroscience.
 
-% TO DO: What next?
+%bh: Commented out- insert personal CV from tex here
+%\begin{vita}
+%
+%\begin{wrapfigure}{l}{0pt}
+%\includegraphics[width=2in,height=2.5in,clip,keepaspectratio]{rjvheadshot}
+%\end{wrapfigure}
+%
+%R.\ Jacob Vogelstein received the Sc.\ B.\ degree in Bio-Electrical Engineering 
+%from Brown University in 2000,  and enrolled in the Biomedical Engineering 
+%Ph.D.\ program at Johns Hopkins University in 2001.  He was inducted into the 
+%Tau Beta Pi and Sigma Xi honor societies in 1999, won the Brown University 
+%Engineering Department's Outstanding Student Award in 2000, and received a 
+%National Science Foundation Graduate Research Fellowship in 2002.  His research 
+%focuses on neuromorphic and neuroprosthetic devices, and his papers have been 
+%finalists in the student paper competitions at the 2004 IEEE International 
+%Conference of the Engineering in Medicine and Biology Society and the 2004 IEEE 
+%International Conference on Electronics, Circuits and Systems.
+%
 %Starting in June 2007, Jacob will work on the ``Revolutionizing Prosthetics 2009'' 
 %project at the Johns Hopkins University Applied Physics Laboratory in Laurel,
 %MD, where he will help to create the next-generation of upper-arm
 %neuroprostheses.  
-
-\end{vita}
+%
+%\end{vita}
 \end{document}
