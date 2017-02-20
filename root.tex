@@ -5,7 +5,7 @@
 
 \documentclass[12pt,oneside,final]{thesis}
 
-\usepackage[superscript]{cite}
+%\usepackage[superscript]{cite}
 \usepackage{amsmath,amsfonts}
 \usepackage{graphicx}
 \graphicspath{{./figs/}}
@@ -65,9 +65,9 @@
 
 %bh Useful additions to base thesis template
 \usepackage{pdfpages} %for including personal CV as pdf at end of file
+\usepackage[authoryear]{natbib} %for author-year citations
 
-
-\includeonly{Intro/chapter1} % added to compile chapters separately (comment out for full thesis)
+\includeonly{chapter0,Intro/chapter1} % added to compile chapters separately (comment out for full thesis)
 
 
 \begin{document}
@@ -82,6 +82,7 @@
 
 
 % add your chapters, best way is to have separate TeX files for each chapter
+\include{chapter0}
 \include{Intro/chapter1}
 \include{Contour/chapter2}
 \include{NaturalImage/chapter3}
@@ -93,15 +94,17 @@
 %% REFERENCES
 
 % if you use BIBTEX
-\bibliographystyle{IEEEtran}
-\bibliography{thesis}
+%\bibliographystyle{IEEEtran} %bh commented out
+\bibliographystyle{plainnat}
+%\bibliography{thesis} %bh commented out
+\bibliography{niebase}
 
 
-%bh Add CV to end of file (comment out for now)
+%bh Add CV to end of file (uncomment to include)
 %\includepdf[pages=-]{CV/CV_Brian_Hu.pdf}
 
 
-%bh: Commented out- insert personal CV from tex here
+%bh commented out- insert personal CV from pdf above
 %\begin{vita}
 %
 %\begin{wrapfigure}{l}{0pt}
