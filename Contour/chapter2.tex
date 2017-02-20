@@ -2,12 +2,6 @@
 \label{sec:contour}
 \chaptermark{Contour integration}
 
-There is increasing evidence that visual processing of objects makes use of both feedforward and feedback streams of information. However, it is unclear how higher visual areas know which features belong to an object and what feedback signals to send back. Here, we develop a recurrent neural model to address these questions in the context of contour integration and figure-ground segregation. A key feature of our model is the use of grouping neurons whose activity represents tentative objects based on the integration of local feature information. Grouping neurons send excitatory feedback to the same local feature neurons that caused their activation, while inhibition
-at both the local feature level and the object representation level help to select between competing interpretations of the visual scene.
-Our model is able to explain several sets of neurophysiological results~\citep{Zhou_etal00,Qiu_etal07,Chen_etal14}, and makes
-testable predictions about the influence of feedback and attention on
-neural responses across different visual areas. Our model also provides a framework for understanding how object-based attention is able to select both objects and the features associated with them.
-
 \section{Introduction}
 \label{intro}
 Gestalt psychologists recognized the importance of the whole in influencing perception of the parts when they laid out several principles (``Gestalt laws'')for perceptual organization~\citep{Wertheimer23,Koffka35}. Contour integration, the linking of line segments into contours, and figure-ground segregation, the segmenting of objects from background, are fundamental components of perceptual organization. Both processes require combining local, low-level and global, high-level information across different visual areas in order to segment the visual scene. The interaction between feedforward and feedback streams carrying this information, as well as the contribution of top-down influences such as attention, are not well understood.
@@ -31,10 +25,11 @@ neurophysiological studies \citep[\eg][]{Duncan84,Egly_etal94,Scholl01,Kimchi_et
 Previous experimental studies have suggested the involvement of different visual areas in contour integration and figure-ground segregation~\citep{Poort_etal12,Chen_etal14}. However, many computational models do not address how top-down influences arising from the complex interplay between different visual areas are needed to accomplish these two tasks. Here we extend previous models of perceptual organization~\citep{Craft_etal07,Mihalas_etal11b} to explain how feedback grouping circuitry can implement the mechanisms necessary to accomplish these tasks. Our model also allows us to explain
 effects of object-based attention and the role of feedback in parsing visual scenes.
 
-\begin{figure*}
-\begin{center}
-\includegraphics[width=0.5\textwidth]{Fig1.eps}
-\end{center}
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.5\textwidth]{Contour/figs/Fig1.eps}
+\makeatletter
+\let\@currsize\normalsize
 \caption{Structure of the model network. Each circle stands for a
   population of neurons with similar receptive fields
   and response properties. 
@@ -65,10 +60,9 @@ effects of object-based attention and the role of feedback in parsing visual sce
   inhibitory grouping cells (IG; again with the indices L and R),
   which inhibit $\rm G_c$ cells nonspecifically and $\rm G_o$ cells in
   all orientations except the preferred one. Top-down attention is
-  modeled as input to the grouping cells and can therefore either be directed towards objects (solid lines) or contours (dashed lines) in the visual field
-  (top).}
+  modeled as input to the grouping cells and can therefore either be directed towards objects (solid lines) or contours (dashed lines) in the visual field (top).}
 \label{Fig:anatomy}
-\end{figure*}
+\end{figure}
 
 \comment{
 \section{Materials and methods} 

@@ -5,7 +5,7 @@
 
 \documentclass[12pt,oneside,final]{thesis}
 
-%\usepackage[superscript]{cite}
+%\usepackage[superscript]{cite} %bh commented out
 \usepackage{amsmath,amsfonts}
 \usepackage{graphicx}
 \graphicspath{{./figs/}}
@@ -57,17 +57,20 @@
 \usepackage{xspace}
 \newcommand{\ie}[0]{{\em i.e.}\ }
 \newcommand{\eg}[0]{{\em e.g.}\ }
-\newcommand{\etal}[0]{{\em et al.}\xspace }
+\newcommand{\etal}[0]{{\em et al.}\xspace}
 \newcommand{\etc}[0]{{\em etc.}\xspace}
 \newcommand{\vs}[0]{{\em vs.}\xspace}
 \newcommand{\vv}[0]{{\em vice-versa}\xspace}
 \newcommand{\via}[0]{{\em via}\xspace}
 
-%bh Useful additions to base thesis template
+%bh Useful additions to the base thesis template
 \usepackage{pdfpages} %for including personal CV as pdf at end of file
-\usepackage[authoryear]{natbib} %for author-year citations
+\usepackage[round,authoryear]{natbib} %for author-year citations (replaces default)
+\def\newblock{\hskip .11em plus .33em minus .07em} %needed to get bibliography working
 
-\includeonly{chapter0,Intro/chapter1} % added to compile chapters separately (comment out for full thesis)
+
+%bh Compile chapters separately (comment out for full thesis)
+\includeonly{chapter0,Intro/chapter1,Contour/chapter2}
 
 
 \begin{document}
@@ -94,9 +97,7 @@
 %% REFERENCES
 
 % if you use BIBTEX
-%\bibliographystyle{IEEEtran} %bh commented out
 \bibliographystyle{plainnat}
-%\bibliography{thesis} %bh commented out
 \bibliography{niebase}
 
 
@@ -104,28 +105,4 @@
 %\includepdf[pages=-]{CV/CV_Brian_Hu.pdf}
 
 
-%bh commented out- insert personal CV from pdf above
-%\begin{vita}
-%
-%\begin{wrapfigure}{l}{0pt}
-%\includegraphics[width=2in,height=2.5in,clip,keepaspectratio]{rjvheadshot}
-%\end{wrapfigure}
-%
-%R.\ Jacob Vogelstein received the Sc.\ B.\ degree in Bio-Electrical Engineering 
-%from Brown University in 2000,  and enrolled in the Biomedical Engineering 
-%Ph.D.\ program at Johns Hopkins University in 2001.  He was inducted into the 
-%Tau Beta Pi and Sigma Xi honor societies in 1999, won the Brown University 
-%Engineering Department's Outstanding Student Award in 2000, and received a 
-%National Science Foundation Graduate Research Fellowship in 2002.  His research 
-%focuses on neuromorphic and neuroprosthetic devices, and his papers have been 
-%finalists in the student paper competitions at the 2004 IEEE International 
-%Conference of the Engineering in Medicine and Biology Society and the 2004 IEEE 
-%International Conference on Electronics, Circuits and Systems.
-%
-%Starting in June 2007, Jacob will work on the ``Revolutionizing Prosthetics 2009'' 
-%project at the Johns Hopkins University Applied Physics Laboratory in Laurel,
-%MD, where he will help to create the next-generation of upper-arm
-%neuroprostheses.  
-%
-%\end{vita}
 \end{document}

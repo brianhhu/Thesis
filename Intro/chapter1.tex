@@ -1,117 +1,12 @@
 \chapter{Introduction}
 \label{sec:intro}
-<<<<<<< Updated upstream
-\chaptermark{Optional running chapter heading}
-
-Introduction.
-
-%A citation \cite{A}. 
-%A citation without brackets \citen{B}. 
-%Multiple citations \cite{A, B, C}.
-
-A citation ~\citep{Abbott2000}. 
-%A citation without brackets \citet{B}. 
-%Multiple citations \citep{A, B, C}.
-
-\section{Section}
-\label{sec:section}
-
-This is a section.  Here's a reference to a different section:
-\ref{sec:subsection}.
-
-\subsection{Subsection}
-\label{sec:subsection}
-
-This is a subsection.
-
-% \begin{figure}[t]
-% \centering
-% \includegraphics[width=\textwidth]{figure}
-% \makeatletter
-% \let\@currsize\normalsize
-% \caption{Caption.}
-% \label{fig:figure}
-% \end{figure}
-% 
-% \begin{figure}[t]
-% \centering
-% \begin{tabular}{c c}
-% \includegraphics[height=2.5in]{figureA} &
-% \includegraphics[width=3in]{figureB}\\
-% (A) & (B)
-% \end{tabular}
-% \makeatletter
-% \let\@currsize\normalsize
-% \caption{Two figures.}
-% \label{fig:twofigures}
-% \end{figure}
-
-% currsize is not set in the long table environment, so we need to set it before we set it up.
-\makeatletter
-\let\@currsize\normalsize
-\makeatother
-
-% tabular environments are set to be single-spaced in the  thesis class,  but long tables do not use tabular
-% to get around this, set the spacing to single spacing at the start of the long table environment, and set it back to double-spacing at the end of it
-\ssp
-\begin{longtable}{cc}
-\caption[This is what I want to have in the LOT]{This is a caption.} \label{tab:pfams} \\
-\hline
-A & B \\
-\hline
-\endfirsthead
-\multicolumn{2}{@{}l}{\textbf{Table \thetable} \ldots continued} \\
-\hline
-A & B \\
-\hline
-\endhead
-a1 & b1 \\
-a2 & b2 \\
-a3 & b3 \\
-a4 & b4 \\
-\hline
-\end{longtable}
-\dsp
-
-\section[Optional table of contents heading]{Section with\\linebreaks in\\the
-name}
-
-This is another section.
-
-\subsection{Another subsection}
-
-\subsubsection{Subsubsection}
-
-\paragraph{Heading level below subsubsection}
-\label{sec:paragraph}
-
-And I quote: 
-%
-\begin{quote}
-La la la.
-\end{quote}
-%
-\noindent No ident after end of quote.  
-
-Another paragraph with a list:
-%
-\begin{itemize}
-%  
-\item Item 1
-%
-\item Item 2
-%
-\end{itemize}
-%
-\noindent Again, we don't indent here.
-=======
 \chaptermark{Introduction}
 
 %Introduction.
 
 \section{Segmentation and figure-ground organization}
 The task of partitioning an image into regions bounded by contours (segmentation) and the task of assigning border ownership of these contours to either the foreground or the background (figure-ground organization) are important first steps in achieving image understanding. Gestalt psychologists were the first to recognize the importance of the whole in influencing perception of the parts, and with this observation, laid out several principles for figure-ground
-organization~\citen{Koffka35, Wertheimer23}. For example, the rule of good continuation states that well-aligned contour elements should be grouped together. This is closely related to the concept of a ''local association field,'' where collinear contour elements excite each other and noncollinear elements inhibit each other~\citep{Ullman92, Field_etal93}. Results from neuroanatomy lend support to these ideas, as the lateral connections within V1 predominantly link similar-orientation cortical columns. \textit{However, our
+organization\citep{Koffka35, Wertheimer23}. For example, the rule of good continuation states that well-aligned contour elements should be grouped together. This is closely related to the concept of a ''local association field,'' where collinear contour elements excite each other and noncollinear elements inhibit each other~\citep{Ullman92, Field_etal93}. Results from neuroanatomy lend support to these ideas, as the lateral connections within V1 predominantly link similar-orientation cortical columns. \textit{However, our
   understanding of the neural mechanisms of these processes remains
   surprisingly limited.}
  
@@ -121,14 +16,14 @@ background. This response enhancement is known as figure-ground modulation (FGM)
 with models that only represent object information in terms of enhanced neural activity in early visual areas \citep{Niebur00a}. {\em I believe that this strongly points to neural circuits that employ populations of neurons which explicitly represent (\ie in their firing rate) the organization of the visual scene in terms of perceptual objects.}
 
 \section{The role of cortical feedback}
-The degree of collinear facilitation observed in V1 is strongly context-dependent, and can change with the behavioral task~\citep{Li_etal04, Li_etal06} as well as perceptual learning~\citep{Li_Gilbert_etal08, Yan_etal14}. As a result, feedback connections from higher areas may play an important role in shaping the responses of neurons in early visual areas. In fact, simultaneous neural recordings from areas V1 and V4 during two different figure-ground segregation tasks show that V4 is intimately involved in the FGM process~\citep{Poort_etal12, Chen_etal14}. In these studies, the FGM signal appears first in V4 and is then fed back to V1, with a delay representing recurrent processing. Additional studies of curve-tracing~\citep{Roelfsema_etal98} and border ownership~\citep{Zhou_etal00, Qiu_etal07, Zhang_vonderHeydt10} further
+The degree of collinear facilitation observed in V1 is strongly context-dependent, and can change with the behavioral task~\citep{Li_etal04, Li_etal06} as well as perceptual learning~\citep{Li_etal08a, Yan_etal14}. As a result, feedback connections from higher areas may play an important role in shaping the responses of neurons in early visual areas. In fact, simultaneous neural recordings from areas V1 and V4 during two different figure-ground segregation tasks show that V4 is intimately involved in the FGM process~\citep{Poort_etal12, Chen_etal14}. In these studies, the FGM signal appears first in V4 and is then fed back to V1, with a delay representing recurrent processing. Additional studies of curve-tracing~\citep{Roelfsema_etal98} and border ownership~\citep{Zhou_etal00, Qiu_etal07, Zhang_vonderHeydt10} further
 demonstrate that feedback mechanisms are necessary for explaining FGM
 in the presence of multiple objects. \textit{However, essential  questions still remain about the nature of the interactions between  and within different cortical areas.} How is early-level feature information about an object combined with global context information about the object in a synergistic way in order to generate FGM?
 
 \section{The role of attention}
-Behavioral studies have shown that attention can be directed to objects \citep{Egly_etal94} and electrophysiological results demonstrate that attention can act as a top-down signal which influences FGM~\citep{Qiu_etal07,  Poort_etal12}. In an ambiguous figure-ground display, attending to one region increases the probability that this region is perceived as figure~\citep{Driver_Baylis96, Vecera_etal04}. Spatial attention, which has been extensively studied, acts like a ''spotlight'' that enhances neural responses within the focus of attention and suppresses responses outside~\citep{Motter93}. Attention can also operate in a feature-based or object-based manner. Feature-based attention acts broadly across the visual scene and increases the responses of all components that share similar feature attributes (e.g. color, orientation, or direction of movement) with the attended component~\citep{Treue_Trujillo99}. Object-based attention highlights all the parts of an object, also encompassing all the features that belong to the object~\citep{Roelfsema_etal98, Schoenfeld_etal14}.
+Behavioral studies have shown that attention can be directed to objects \citep{Egly_etal94} and electrophysiological results demonstrate that attention can act as a top-down signal which influences FGM~\citep{Qiu_etal07,  Poort_etal12}. In an ambiguous figure-ground display, attending to one region increases the probability that this region is perceived as figure~\citep{Driver_Baylis96, Vecera_etal04}. Spatial attention, which has been extensively studied, acts like a ''spotlight'' that enhances neural responses within the focus of attention and suppresses responses outside~\citep{Motter93a}. Attention can also operate in a feature-based or object-based manner. Feature-based attention acts broadly across the visual scene and increases the responses of all components that share similar feature attributes (e.g. color, orientation, or direction of movement) with the attended component~\citep{Treue_Trujillo99}. Object-based attention highlights all the parts of an object, also encompassing all the features that belong to the object~\citep{Roelfsema_etal98, Schoenfeld_etal14}.
 Attention has been found to modulate border ownership in an object-based manner~\citep{Qiu_etal07}. Border ownership is a property of many neurons in V2 which encodes the side to which an object border
-belongs relative to their receptive field \citep{Zhou_etal00}. To explain these results,~\cite{Craft_etal07} proposed a model in which populations of grouping neurons explicitly represent (in their firing rates) the perceptual organization of the visual scene. Grouping neurons are reciprocally connected to border ownership selective (BOS) neurons through feedforward and feedback connections. Attention broadly
+belongs relative to their receptive field \citep{Zhou_etal00}. To explain these results,~\citet{Craft_etal07} proposed a model in which populations of grouping neurons explicitly represent (in their firing rates) the perceptual organization of the visual scene. Grouping neurons are reciprocally connected to border ownership selective (BOS) neurons through feedforward and feedback connections. Attention broadly
 targets grouping neurons, which can then modulate the activity of BOS
 neurons through feedback~\citep{Mihalas_etal11b}. A feedforward version of this model has been applied to natural images, where it outperforms other models in predicting the location of eye
 fixations~\citep{Russell_etal14}.
@@ -154,7 +49,7 @@ object-based neglect.
 Grouping mechanisms are important not only for piecing together object
 contours, but also for providing a structure for selectively attending
 to groups of objects~\citep{Treisman_Gelade80}. Supported by extensive
-psychophysical data,~\cite{Nakayama_etal95} proposed that surface
+psychophysical data,~\citet*{Nakayama_etal95} proposed that surface
 representations play a key role in intermediate-level vision. For
 example, by selectively attending to a surface in 3D space, subjects
 can perform efficient search for a conjunction target~\citep{Nakayama_Silverman86}. In a separate cueing experiment,
@@ -165,46 +60,33 @@ plane, reaching for objects along a table top \etc). I hope to show that basis f
 neurons in a surface-based manner. \textit{I believe that my models will provide insight into the neural circuits that represent surfaces, filling a critical gap in our understanding of intermediate-level vision.}
 
 \section{Overview of the grouping model}
-\comment{
-% \begin{wrapfigure}{r}{.3\textwidth}
-\begin{figure}[h]
-  %\vspace{-60pt}
-  \centering 
-  \includegraphics[width=.3\textwidth]{Intro/figs/groupingcircuit}
-  \caption{Grouping model} 
-  %\vspace{-15pt}
-  \label{fig:GroupingModel}
-%\end{wrapfigure}
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{Intro/figs/groupingcircuit}
+\makeatletter
+\let\@currsize\normalsize
+\caption{Grouping model}
+\label{fig:GroupingModel}
 \end{figure}
-}
- \begin{figure}[t]
- \centering
- \includegraphics[width=\textwidth]{Intro/figs/groupingcircuit}
- \makeatletter
- \let\@currsize\normalsize
- \caption{Caption.}
- \label{fig:figure}
- \end{figure}
 
 Several models have been proposed~\citep{Zhaoping05, Sakai_Nishimura06,Craft_etal07, Layton_etal12} to describe how a neuron's border ownership selectivity can be modulated by visual input far away from its classical receptive field (RF). In the grouping model
 \citep{Craft_etal07}, BOS neurons participate in neural circuits that define perceptual objects early-on in processing (Figure~\ref{fig:GroupingModel}). An object border activates a pair of orientation-selective BOS neurons whose RFs are shown as ellipses. The arrows on the RFs point towards the preferred direction of the neuron, indicating where the object is relative to the neuron's RF. BOS neurons activated by the solid-line square (red ellipses) excite the appropriate grouping neuron (red G in circle) through feedforward connections (red solid lines). The grouping neuron in turn enhances the activity of the same BOS neurons through feedback connections (red dotted lines). This type of facilitatory feedback may be mediated by NMDAR channels, which allow gating of sensory input by top-down signals~\citep{Palmer_etal14}. Neurons consistent with other objects (e.g. the dashed-line square) project to other grouping neurons (blue G in circle in this case). Presence of the solid-line square increases the firing rate of the red grouping neuron over that of the blue (and other) grouping neurons since the latter receive less feedforward input. As a consequence, the red grouping neuron provides more feedback to the red BOS neurons than the blue and gray BOS neurons would receive from their respective grouping neurons. Likewise, presence of the dashed-line square increases the firing rates of all blue neurons over those of gray and red neurons. Thus, an object border is represented by two BOS neurons whose relative activity codes for the side of ownership. The relative difference in firing rate is also known as the BOS signal~\citep{Zhou_etal00}.
 
-% The BOS signal appears \textasciitilde 25 ms after the visual response
-% to an oriented edge, and the delay is essentially independent of object size \citep{Zhou_etal00}. This constant delay is consistent with a model in which grouping neurons of different sizes integrate local edge signals, and by feedback enhance the same edge
-% signals~\citep{Craft_etal07}. Attention enhances a BOS neuron's
-% response when an object is on the neuron's preferred side, but has a
-% suppressive effect if the object is on the non-preferred
-% side~\citep{Qiu_etal07}. This asymmetry is consistent with a model in
-% which top-down attention targets grouping neurons, which then modulate
-% the activity of BOS neurons through feedback~\citep{Mihalas_etal11b}. Additional support for the grouping model comes from observations of short-term memory of BOS signals~\citep{OHerron_vonderHeydt09} and remapping of BOS signals across saccades and object movements~\citep{OHerron_vonderHeydt13}. These findings are difficult
-% to explain with models that only represent object information in terms
-% of neural activity in early visual areas. I believe that this strongly
-% points to neural circuits that employ populations of neurons which
-% explicitly represent (\ie in their firing rate) the organization of
-% the visual scene.
+The BOS signal appears \textasciitilde 25 ms after the visual response
+to an oriented edge, and the delay is essentially independent of object size \citep{Zhou_etal00}. This constant delay is consistent with a model in which grouping neurons of different sizes integrate local edge signals, and by feedback enhance the same edge
+ signals~\citep{Craft_etal07}. Attention enhances a BOS neuron's
+ response when an object is on the neuron's preferred side, but has a
+ suppressive effect if the object is on the non-preferred
+ side~\citep{Qiu_etal07}. This asymmetry is consistent with a model in
+ which top-down attention targets grouping neurons, which then modulate
+ the activity of BOS neurons through feedback~\citep{Mihalas_etal11b}. Additional support for the grouping model comes from observations of short-term memory of BOS signals~\citep{OHerron_vonderHeydt09} and remapping of BOS signals across saccades and object movements~\citep{OHerron_vonderHeydt13}. These findings are difficult
+ to explain with models that only represent object information in terms
+ of neural activity in early visual areas. I believe that this strongly
+ points to neural circuits that employ populations of neurons which
+ explicitly represent (\ie in their firing rate) the organization of
+ the visual scene.
 
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../root"
 %%% End:
->>>>>>> Stashed changes
