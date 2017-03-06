@@ -36,10 +36,9 @@ computational results \citep{Dong_etal08a,Craft_etal07,Mihalas_etal11b,Ardila_et
 long-standing interest in the role of intra-areal lateral (``horizontal'') connections in early visual cortex in the representation of contours. The resulting computational model developed by \citet{Stemmler_etal95b} has since been corroborated by a large number of independent studies
 \citep[e.g.][]{Simonotto_etal97,Polat_etal98,Chatterjee_etal11,Xie_etal14}. However, in agreement with others at the time, the underlying concept of horizontal connections in that model was that they are essentially static, or varying over time scales given by ontogenetic development or neuronal plasticity. Such structures could thus implement overall statistics of natural scenes~\citep[like circular structures, e.g.][]{Sigman_etal01} but they could not flexibly represent the myriad of instantaneously present and constantly changing visual shapes observed during perception of dynamic scenes. This view has been considerably enlarged over the last decade or so, with the~\citet{Chen_etal14} article, on which Brian bases a large part of his model, being the latest in a series of psychophysical and physiological studies. What is emerging is a view in which the lateral connections are in place but can be actively and rapidly modulated by top-down connectivity from higher areas. It may thus be that two ``classical'' approaches to explain perceptual organization, one using the horizontal connections as a substrate~\citep[e.g.][]{Zhaoping05, Piech_etal13}, the other using white-matter projections from higher areas \citep[e.g.][]{Craft_etal07,Mihalas_etal11b}, can be converged into an integrated model.
 
-\textbf{Contributions of this project.}  \textit{This project has the
+\textbf{Contributions of this project.} \textit{This project has the
   potential to deepen and extend our understanding of the neural
-  mechanisms of FGM.} 
-Most existing models~\citep{Grossberg94, Grossberg97, Zhaoping05, Piech_etal13} group object features by a diffusion-like process that propagates neural activity along lateral connections within early visual areas. Another class of models relies on the fast temporal coding structures of spike trains \citep{Singer99b}, but experimental evidence is controversial \citep{Thiele_Stoner03,Roelfsema_etal04,Dong_etal08a}.In my proposed model, FGM involves grouping mechanisms that make use of feedforward, feedback, and lateral connections between and within multiple cortical areas. Previous models on the neural coding of border ownership have identified a plausible network architecture for perceptual organization and object-based attention. I will extend these models to explain how feedback grouping mechanisms could be used to perform segmentation of both artificial and natural images. My model will also offer several falsifiable predictions which can be used to test it
+  mechanisms of FGM.} Most existing models~\citep{Grossberg94, Grossberg97, Zhaoping05, Piech_etal13} group object features by a diffusion-like process that propagates neural activity along lateral connections within early visual areas. Another class of models relies on the fast temporal coding structures of spike trains \citep{Singer99b}, but experimental evidence is controversial \citep{Thiele_Stoner03,Roelfsema_etal04,Dong_etal08a}.In my proposed model, FGM involves grouping mechanisms that make use of feedforward, feedback, and lateral connections between and within multiple cortical areas. Previous models on the neural coding of border ownership have identified a plausible network architecture for perceptual organization and object-based attention. I will extend these models to explain how feedback grouping mechanisms could be used to perform segmentation of both artificial and natural images. My model will also offer several falsifiable predictions which can be used to test it
 and compare it with competing computational models. \textit{This study also has implications for patients with object-based neglect.} Patients who exhibit this type of neglect are unable to process certain parts of an object due to lesions in higher areas of the
 brain~\citep{Marshall_Halligan93}. Clarifying how top-down attention
 interacts with the neural circuits responsible for grouping together
@@ -60,7 +59,7 @@ plane, reaching for objects along a table top \etc). I hope to show that basis f
 neurons in a surface-based manner. \textit{I believe that my models will provide insight into the neural circuits that represent surfaces, filling a critical gap in our understanding of intermediate-level vision.}
 
 \section{Overview of the grouping model}
-\begin{figure}[t]
+\begin{figure}[htbp]
 \centering
 \includegraphics[width=\textwidth]{Intro/figs/groupingcircuit}
 \makeatletter
@@ -73,18 +72,15 @@ Several models have been proposed~\citep{Zhaoping05, Sakai_Nishimura06,Craft_eta
 \citep{Craft_etal07}, BOS neurons participate in neural circuits that define perceptual objects early-on in processing (Figure~\ref{fig:GroupingModel}). An object border activates a pair of orientation-selective BOS neurons whose RFs are shown as ellipses. The arrows on the RFs point towards the preferred direction of the neuron, indicating where the object is relative to the neuron's RF. BOS neurons activated by the solid-line square (red ellipses) excite the appropriate grouping neuron (red G in circle) through feedforward connections (red solid lines). The grouping neuron in turn enhances the activity of the same BOS neurons through feedback connections (red dotted lines). This type of facilitatory feedback may be mediated by NMDAR channels, which allow gating of sensory input by top-down signals~\citep{Palmer_etal14}. Neurons consistent with other objects (e.g. the dashed-line square) project to other grouping neurons (blue G in circle in this case). Presence of the solid-line square increases the firing rate of the red grouping neuron over that of the blue (and other) grouping neurons since the latter receive less feedforward input. As a consequence, the red grouping neuron provides more feedback to the red BOS neurons than the blue and gray BOS neurons would receive from their respective grouping neurons. Likewise, presence of the dashed-line square increases the firing rates of all blue neurons over those of gray and red neurons. Thus, an object border is represented by two BOS neurons whose relative activity codes for the side of ownership. The relative difference in firing rate is also known as the BOS signal~\citep{Zhou_etal00}.
 
 The BOS signal appears \textasciitilde 25 ms after the visual response
-to an oriented edge, and the delay is essentially independent of object size \citep{Zhou_etal00}. This constant delay is consistent with a model in which grouping neurons of different sizes integrate local edge signals, and by feedback enhance the same edge
- signals~\citep{Craft_etal07}. Attention enhances a BOS neuron's
- response when an object is on the neuron's preferred side, but has a
- suppressive effect if the object is on the non-preferred
- side~\citep{Qiu_etal07}. This asymmetry is consistent with a model in
- which top-down attention targets grouping neurons, which then modulate
- the activity of BOS neurons through feedback~\citep{Mihalas_etal11b}. Additional support for the grouping model comes from observations of short-term memory of BOS signals~\citep{OHerron_vonderHeydt09} and remapping of BOS signals across saccades and object movements~\citep{OHerron_vonderHeydt13}. These findings are difficult
- to explain with models that only represent object information in terms
- of neural activity in early visual areas. I believe that this strongly
- points to neural circuits that employ populations of neurons which
- explicitly represent (\ie in their firing rate) the organization of
- the visual scene.
+to an oriented edge, and the delay is essentially independent of object size \citep{Zhou_etal00}. This constant delay is consistent with a model in which grouping neurons of different sizes integrate local edge signals, and by feedback enhance the same edge  signals~\citep{Craft_etal07}. Attention enhances a BOS neuron's response when an object is on the neuron's preferred side, but has a
+suppressive effect if the object is on the non-preferred side~\citep{Qiu_etal07}. This asymmetry is consistent with a model in
+which top-down attention targets grouping neurons, which then modulate
+the activity of BOS neurons through feedback~\citep{Mihalas_etal11b}. Additional support for the grouping model comes from observations of short-term memory of BOS signals~\citep{OHerron_vonderHeydt09} and remapping of BOS signals across saccades and object movements~\citep{OHerron_vonderHeydt13}. These findings are difficult
+to explain with models that only represent object information in terms
+of neural activity in early visual areas. I believe that this strongly
+points to neural circuits that employ populations of neurons which
+explicitly represent (\ie in their firing rate) the organization of
+the visual scene.
 
 %%% Local Variables:
 %%% mode: latex
