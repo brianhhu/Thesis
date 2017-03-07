@@ -65,20 +65,21 @@
 \newcommand{\ibid}[0]{{\em ibid}\xspace}
 
 %bh Useful additions to the base thesis template
-\usepackage{pdfpages} %for including personal CV as pdf at end of file
-\usepackage[round,authoryear]{natbib} %for author-year citations (replaces default)
-\def\newblock{\hskip .11em plus .33em minus .07em} %needed to get bibliography working
-\usepackage{siunitx} %bh for reporting small p-values
+\usepackage{pdfpages} % for including personal CV as pdf at end of file (replaces default CV)
+\usepackage[round,authoryear]{natbib} % for author-year citations (replaces default cite)
+\usepackage{siunitx} % for reporting small p-values
+\def\newblock{\hskip .11em plus .33em minus .07em} % needed to get bibliography working
+
 
 %bh Compile chapters separately (comment out for full thesis)
-\includeonly{chapter0}%,Intro/chapter1,Contour/chapter2,3D-Surface/chapter4,3D-Saliency/chapter5}
+\includeonly{chapter0,Intro/chapter1,3D-Saliency/chapter5}%,Contour/chapter2,3D-Surface/chapter4,3D-Saliency/chapter5}
 
 
 \begin{document}
 
 \title{Grouping mechanisms for object-based vision and attention}
 \author{Brian H. Hu}
-\degreemonth{May}
+\degreemonth{August}
 \degreeyear{2017} 
 \dissertation
 \doctorphilosophy
@@ -98,12 +99,19 @@
 %% REFERENCES
 
 % if you use BIBTEX
+\cleardoublepage % add bibliography to TOC
+\phantomsection
+\addcontentsline{toc}{chapter}{Bibliography}
+
 \bibliographystyle{plainnat}
-\bibliography{niebase}
+\bibliography{niebase} % include niebase_supp for other references
 
+% bh Add CV to end of file (uncomment to include)
+%\cleardoublepage % add CV to TOC
+%\phantomsection
+%\addcontentsline{toc}{chapter}{Curriculum Vitae}
 
-%bh Add CV to end of file (uncomment to include)
-%\includepdf[pages=-]{CV/CV_Brian_Hu.pdf}
+%\includepdf[pages=-,offset=0 -20]{CV/CV_Brian_Hu.pdf} % use offset to avoid cutting off header
 
 
 \end{document}
