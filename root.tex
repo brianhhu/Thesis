@@ -73,7 +73,7 @@
 
 
 %bh Compile chapters separately (comment out for full thesis)
-\includeonly{chapter0,Intro/chapter1,Contour/chapter2,3D-Saliency/chapter5,appendix}%,3D-Surface/chapter4,3D-Saliency/chapter5}
+\includeonly{chapter0,Intro/chapter1,Contour/chapter2,3D-Surface/chapter4,3D-Saliency/chapter5,appendix} % missing natural grouping chapter
 
 
 \begin{document}
@@ -96,7 +96,7 @@
 \include{3D-Saliency/chapter5}
 
 \begin{appendices}
-d\include{appendix}
+\include{appendix}
 \end{appendices}
 
 %% REFERENCES
@@ -109,12 +109,12 @@ d\include{appendix}
 \bibliographystyle{plainnat}
 \bibliography{niebase,niebase_supp} % include niebase_supp for other references
 
-% bh Add CV to end of file (uncomment to include)
-%\cleardoublepage % add CV to TOC
-%\phantomsection
-%\addcontentsline{toc}{chapter}{Curriculum Vitae}
-
-%\includepdf[pages=-,offset=0 -20]{CV/CV_Brian_Hu.pdf} % use offset to avoid cutting off header
+%% bh Add CV to end of file (uncomment to include)
+%\makeatletter % needed to make TOC link correctly to CV
+%\newcommand*{\@pdfpagephantomchapter}[2][]{\edef\@currentHref{\AM@linkname.\AM@page}\addcontentsline{toc}{chapter}{#1}}
+%\makeatother
+%
+%\includepdf[pages=-,link,linkfit=FitH,addtotoc={1, pdfpagephantomchapter, 1, Curriculum Vitae, CV}]{CV/CV_Brian_Hu.pdf}
 
 
 \end{document}
