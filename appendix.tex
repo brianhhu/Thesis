@@ -513,6 +513,8 @@ little activity cased by nonspecific inputs.
 \label{Fig:V4_total}
 \end{figure}
 
+\clearpage
+
 \begin{figure}[t]
 \begin{center}
 \includegraphics[width=\textwidth]{Contour/figs/FigS2.eps}
@@ -534,6 +536,27 @@ little activity cased by nonspecific inputs.
   suppression.  The neuronal responses (E) and contour-response $d'$ (F) increased (approached zero) when the background contour was moved away from the center of the V1 RF.}
 \label{Fig:V1_total}
 \end{figure}
+
+\clearpage
+
+\begin{figure}[t]
+\begin{center}
+\includegraphics[width=0.75\textwidth]{Contour/figs/FigS3.eps}
+\end{center}
+\makeatletter
+\let\@currsize\normalsize
+\caption[Attention modulates border ownership in the presence of multiple objects]{Attention in the presence of multiple objects. Shown are  (left to right) the input stimulus, the edge cell activity (E), the  border ownership assignment along edges (shown as the vector  modulation index
+$\protect\overrightarrow{\protect\mathbf{v}}$,
+section~\ref{sec:vmi}), the object grouping neuron activity (Go), and the contour grouping activity (Gc). The input stimulus is overlaid (white lines) on top of the grouping cell activities (columns 4 and~5) to aid visualizing the location of the two figures. Activities are normalized within each map, and warmer colors indicate higher activity (see color bar at right). The yellow dot indicates the locus of attention, which was applied at the level of grouping neurons. In the absence of attention (top row) or when attention is directed to the foreground square (middle row), the edge between the figures is correctly assigned to the foreground. If attention is directed toward the background square (bottom row), the border ownership signal of this edge is greatly reduced, consistent with experimental observations~\citep{Qiu_etal07}.}
+\label{Fig:Overlap_Square}
+\end{figure}
+
+Even in the absence of attention, figure-ground segregation can be
+observed in the border-ownership assignment along the edges of the two
+squares, as well as in the object and contour grouping cell activity
+(Figure~\ref{Fig:Overlap_Square}, row 1). Figure \ref{Fig:Overlap_Square} shows the responses of different populations
+of neurons in our model for the different attention conditions. This
+figure should be compared with Figure~3 in \cite{Mihalas_etal11b} which is a model related to ours but which doesnot contain $G_c$ cells. The figure shows that the approximate locations of the foreground and background squares are represented by two peaks in the activity of object grouping neurons (fourth column). Selectively attending to one object enhances the activity of grouping neurons corresponding to the attended object while simultaneously suppressing the activity of grouping neurons representing the unattended object. Attentional modulation at the grouping neuron level is then propagated back to border-ownership selective neurons along object boundaries via the feedback grouping circuitry of our model. Of particular interest is the center edge separating the foreground and background squares. When attention is directed to the foreground square, assignment of border ownership along this edge is strengthened relative to the unattended case (Figure~\ref{Fig:Overlap_Square}, row 2).  However, if attention is directed toward the background square, border-ownership modulation of the edge between the two squares is greatly reduced (Figure~\ref{Fig:Overlap_Square}, row 3). These results are in agreement with the physiological evidence~\citep{Qiu_etal07}, and demonstrate that grouping mechanisms provide a means to attend to objects in clutter.  Functionally, when attention is directed towards the occluded object, suppression of the border-ownership signal along the occluding edge is useful because this edge is ``owned'' by the occluder and should not be included in the representation of the attended object~\citep{Craft_etal07}.
 
 %%% Local Variables:
 %%% mode: latex
