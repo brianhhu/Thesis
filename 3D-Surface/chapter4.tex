@@ -46,7 +46,7 @@ Currently, we know very little about how surfaces are represented in the brain, 
 
 \section{Methods}
 
-\subsection{Model of surface grouping}
+\subsection{Surface grouping model}
 
 An overview of the network structure of our model is shown in
 Figure~\ref{NetworkStructure}. We extend a neural model of visual
@@ -58,14 +58,77 @@ input from monocular cells. These cells are tuned to a certain disparity based o
 
 The third and final layer consists of planar grouping cells which receive excitatory input from populations of disparity-selective
 cells. Receptive fields of the planar grouping cells are relatively broad and non-specific, resembling surface patches with a certain range of depth and orientation selectivity in 3D space. These cells may correspond to neurons found in parietal cortex, which have been shown to be selective for the tilt and slant of planar surfaces~\citep{Rosenberg_etal13}. In our model, we used a total of 15~planar grouping cells (\ie five frontoparallel planes, five back slant planes, and five front slant planes), which was sufficient to ``tile'' the whole 3D visual scene. Planar grouping cells compete with each other through lateral inhibition, which helps to select the best possible interpretation of surfaces within the scene. Additionally, planar grouping cells send reciprocal feedback connections to the disparity-selective cells that define their surface, akin to the relationship between grouping cells and border ownership cells in models of 2D scenes~\citep{Craft_etal07,Mihalas_etal11b}. To avoid
-uncontrolled feedback excitation, feedback is multiplicative and only amplifies existing feedforward excitation. Selective attention is modeled as an additive input to those planar grouping neurons representing attended objects. This attentional modulation input is set to a value of 0.25 of the sensory input. A more detailed description of the model equations and parameters can be found in~.
-% cite Appendix?
+uncontrolled feedback excitation, feedback is multiplicative and only amplifies existing feedforward excitation. Selective attention is modeled as an additive input to those planar grouping neurons representing attended objects. This attentional modulation input is set to a value of 0.25 of the sensory input.
+
+\subsection{Model equations}
 
 All model neurons are simulated as single compartment units with an
 activity that is modeled as a continuous variable (rate coding). These
 units are zero-threshold, linear neurons which receive excitatory and
 inhibitory current inputs. The activity of the units is determined by
 a set of coupled, first-order nonlinear ordinary differential equations, which can be solved in MATLAB (MathWorks) using standard numerical integration methods (Euler, Runge-Kutta, \etc) 
+
+The dynamics of each layer 2 and layer 3 neuron can be described by,
+\begin{equation}
+\tau f'(t) = -f + [\Sigma W]_+
+\end{equation}
+where $f$ represents the neuron's activity and $\tau$ its time constant (= $10^{-2}$ s), $W$ is the neuron's inputs, and $[$ $ ]_+$ means half-wave rectification.
+
+The feedforward weights from a layer 1 to layer 2 neuron, $W_{12}$, is
+\begin{equation}
+W_{12} = \exp(-(\frac{(X_1 \pm D-X_2)^2}{\sigma_{12,x}^2}+\frac{(Y_1-Y_2)^2}{\sigma_{12,y}^2}))
+\end{equation}
+where $D$ is the disparity of the layer 2 neuron.
+
+The feedforward weights from a layer 2 to layer 3 neuron, $W_{23}$, is
+\begin{equation}
+e_x= cos(S)cos(T)(X_2-X_3)+cos(S)sin(T)(Y_2-Y_3)-sin(S)(D_2-D_3)
+\end{equation}
+\begin{equation}
+e_y= -sin(T)(X_2-X_3)+cos(T)(Y_2-Y_3)
+\end{equation}
+\begin{equation}
+e_z= sin(S)cos(T)(X_2-X_3)+sin(S)sin(T)(Y_2-Y_3)+cos(S)(D_2-D_3)
+\end{equation}
+\begin{equation}
+W_{23} = \exp(-(\frac{e_x^2}{\sigma_{23,x}^2}+\frac{e_y^2}{\sigma_{23,y}^2}+\frac{e_z^2}{\sigma_{23,z}^2})) 
+\end{equation}
+where $S$ and $T$ are the slant and tilt, respectively, of the layer 3 planar grouping neuron.
+
+The lateral inhibition weights between two neurons in either layer 2 or layer 3, $W_{ij}$, is proportional to the amount of overlap in their feedforward inputs,
+\begin{equation}
+W_{ij} = \sum\limits_{k \epsilon layer(l-1)} min(W_{ki}, W_{kj})
+\end{equation}
+
+The feedback weights from a layer 3 to layer 2 neuron, $W_{32}$, is reciprocal and multiplicative in that it only modulates the feedforward input,
+\begin{equation}
+W_{32} = W_{23}'
+\end{equation}
+
+A summary of the critical parameter values for the surface grouping model is shown below in Table~\ref{partable_surface}.
+
+\begin{table}[b!]
+\makeatletter
+\let\@currsize\normalsize
+\caption[Parameter values for surface grouping model]{\textbf{Parameter Values}}
+\centering
+\begin{tabular}{@{\hspace{10pt}}c@{\hspace{10pt}}@{\hspace{10pt}}c@{\hspace{10pt}}@{\hspace{10pt}}c@{\hspace{10pt}}}
+        \hline
+        \small{Parameter} & \small{Value} & \small{Description}\\
+        \hline
+        $X$ & 1 to 35 & x-position (range) \\
+        $Y$ & 1 to 35 & y-position (range) \\
+        $D$ & -7 to 7 & disparity (range) \\
+        $\sigma_{12,x}$ & $0.69$ & spread in x (layer 1 to 2) \\
+        $\sigma_{12,y}$ & $2$ & spread in y (layer 1 to 2) \\
+        $S$ & $0$, $\pi/4$, $\pi/2$ & slant of grouping neuron \\
+        $T$ & $\pi/2$, $3\pi/2$ & tilt of grouping neuron \\
+        $\sigma_{23,x}$ & $0.095$ & spread in x (layer 2 to 3) \\
+        $\sigma_{23,y}$ & $0.045$ & spread in y (layer 2 to 3) \\
+        $\sigma_{23,z}$ & $1.185$ & spread in z (layer 2 to 3) \\
+\end{tabular}
+\label{partable_surface}
+\end{table}
 
 \begin{figure}[t]
 \centering
@@ -76,7 +139,7 @@ a set of coupled, first-order nonlinear ordinary differential equations, which c
 \label{Basis functions}
 \end{figure}
 
-\subsection{Disparity-selective cells as basis function units}
+\subsection{Basis function units}
 \label{sec:basis_func}
 
 Orientation selective cells in V2 have gain field-like properties, with their responses to stimulus orientation depending nonlinearly on disparity~\citep{vonderHeydt_etal00a}.
