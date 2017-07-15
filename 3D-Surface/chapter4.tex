@@ -57,8 +57,10 @@ The second layer consists of binocular cells, which receive excitatory
 input from monocular cells. These cells are tuned to a certain disparity based on a fixed spatial weighting between the left and right monocular cells, analogous to the disparity-selective binocular neurons in visual cortex of monkeys~\citep{Poggio_Fischer77, Poggio_Poggio84} and cats~\citep{Bishop_Pettigrew86, Ohzawa_etal90}. Lateral inhibition between cells representing different disparities along the same left- or right-eye line of sight reduces potential false matches~\citep{Marr_Poggio76}.
 
 The third and final layer consists of planar grouping cells which receive excitatory input from populations of disparity-selective
-cells. Receptive fields of the planar grouping cells are relatively broad and non-specific, resembling surface patches with a certain range of depth and orientation selectivity in 3D space. These cells may correspond to neurons found in parietal cortex, which have been shown to be selective for the tilt and slant of planar surfaces~\citep{Rosenberg_etal13}. In our model, we used a total of 15~planar grouping cells (\ie five frontoparallel planes, five back slant planes, and five front slant planes), which was sufficient to ``tile'' the whole 3D visual scene. Planar grouping cells compete with each other through lateral inhibition, which helps to select the best possible interpretation of surfaces within the scene. Additionally, planar grouping cells send reciprocal feedback connections to the disparity-selective cells that define their surface, akin to the relationship between grouping cells and border ownership cells in models of 2D scenes~\citep{Craft_etal07,Mihalas_etal11b}. To avoid
-uncontrolled feedback excitation, feedback is multiplicative and only amplifies existing feedforward excitation. Selective attention is modeled as an additive input to those planar grouping neurons representing attended objects. This attentional modulation input is set to a value of 0.25 of the sensory input.
+cells. Receptive fields of the planar grouping cells are relatively broad and non-specific, resembling surface patches with a certain range of depth and orientation selectivity in 3D space. These cells may correspond to neurons found in parietal cortex, which have been shown to be selective for the tilt and slant of planar surfaces~\citep{Rosenberg_etal13}. In our model, we used a total of 15~planar grouping cells (\ie five frontoparallel planes, five back slant planes, and five front slant planes), which was sufficient to ``tile'' the whole 3D visual scene. Planar grouping cells compete with each other through lateral inhibition, which helps to select the best possible interpretation of surfaces within the scene. Additionally, planar grouping cells send reciprocal feedback connections to the disparity-selective cells that define their surface, akin to the relationship between grouping cells and border ownership cells in models of 2D scenes~\citep{Craft_etal07,Mihalas_etal11b}.
+ To avoid
+uncontrolled feedback excitation, feedback is multiplicative and only amplifies existing feedforward excitation. 
+Selective attention is modeled as an additive input to those planar grouping neurons representing attended objects. This attentional modulation input is set to a value of 0.25 of the sensory input.
 
 \subsection{Model equations}
 
@@ -100,14 +102,18 @@ The lateral inhibition weights between two neurons in either layer 2 or layer 3,
 W_{ij} = \sum\limits_{k \epsilon layer(l-1)} min(W_{ki}, W_{kj})
 \end{equation}
 
-The feedback weights from a layer 3 to layer 2 neuron, $W_{32}$, is reciprocal and multiplicative in that it only modulates the feedforward input,
+The feedback weights from a layer 3 to layer 2 neuron, $W_{32}$, are the reciprocal of the feedforward weights, $W_{23}$, and the feedback is multiplicative in that it only modulates the feedforward input,
 \begin{equation}
 W_{32} = W_{23}'
 \end{equation}
+\begin{equation}
+E = B(1 + T)
+\end{equation}
+where E is the net excitation,  B is the bottom-up feedforward excitation, and T is the top-down feedback excitation for a layer 2 neuron.
 
 A summary of the critical parameter values for the surface grouping model is shown below in Table~\ref{partable_surface}.
 
-\begin{table}[b!]
+\begin{table}[t!]
 \makeatletter
 \let\@currsize\normalsize
 \caption[Parameter values for surface grouping model]{\textbf{Parameter Values}}
