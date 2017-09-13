@@ -175,7 +175,7 @@ results~\citep{Chen_etal14}, and our model was able to largely
 reproduce the magnitude and time course of contour integration at both
 the V1 and V4 levels. The second comes from studies of border-ownership coding
 \citep{Zhou_etal00} and we show that our model not only explains the
-emergence of border ownership selectivity but also its approximate
+emergence of border-ownership selectivity but also its approximate
 time course as reported in that study. The third set of experimental data
 constraining our model is from the study by \cite{Qiu_etal07} of the
 interaction between border-ownership selectivity and selective
@@ -251,7 +251,7 @@ points, with their orientations randomly chosen from four possibilities, $0, \pi
   vector modulation index}
 \label{sec:vmi}
 
-While the border ownership signal discussed in the previous section (the difference in firing rates between presentations of a figure on the two sides of a a neuron's RF) is useful to characterize border-ownership selectivity for that particular neuron, description of population behavior requires a more general measure. We use the vector modulation index, introduced by \cite{Craft_etal07} and defined
+While the border-ownership signal discussed in the previous section (the difference in firing rates between presentations of a figure on the two sides of a a neuron's RF) is useful to characterize border-ownership selectivity for that particular neuron, description of population behavior requires a more general measure. We use the vector modulation index, introduced by \cite{Craft_etal07} and defined
 by the expression 
 \begin{equation}
 \label{eq:2}
@@ -269,7 +269,7 @@ where $\hat{\imath}$ and $\hat{\jmath}$ are unit vectors along the horizontal an
                 \left|B_{\theta}(x,y)\sin\theta\right|}
 \end{split}
 \end{equation}
-Here, $B_{\theta}(x,y)$ is the border ownership signal (difference between the activities of the two opposing B neurons) at the preferred
+Here, $B_{\theta}(x,y)$ is the border-ownership signal (difference between the activities of the two opposing B neurons) at the preferred
 orientation $\theta$ at position $(x,y)$, and $\theta$ runs over all
 angles taken into account in the model (four directed orientations in our case, namely $0, \pi/4, \pi/2,$ and $3\pi/4$, each with both side-of-figure preferences). Vertical bars in the sums in the denominators indicate absolute values.
 
@@ -401,7 +401,7 @@ our results are a prediction awaiting experimental falsification.
 \includegraphics[width=\textwidth]{Contour/figs/Fig6.eps}
 \makeatletter
 \let\@currsize\normalsize
-\caption[Time course of figure-ground segregation]{Figure-ground segregation of a square object as in the~\citet{Zhou_etal00} experiments. (A) Shown left to right are the input stimulus, the edge cell activity (E), the border ownership assignment along edges (shown as the vector modulation index $\protect\overrightarrow{\mathbf{v}}$, section~\ref{sec:vmi}), the object grouping neuron activity $(G_o)$ and the contour grouping activity $(G_c)$. Activities are normalized within each map, and warmer colors indicate higher activity (see color bar at right). (B) Time course of normalized border-ownership cell activity for the preferred side-of-figure (red) and non-preferred side-of-figure (blue) for the receptive field marked by the yellow circle in panel A.
+\caption[Time course of figure-ground segregation]{Figure-ground segregation of a square object as in the~\citet{Zhou_etal00} experiments. (A) Shown left to right are the input stimulus, the edge cell activity (E), the border-ownership assignment along edges (shown as the vector modulation index $\protect\overrightarrow{\mathbf{v}}$, section~\ref{sec:vmi}), the object grouping neuron activity $(G_o)$ and the contour grouping activity $(G_c)$. Activities are normalized within each map, and warmer colors indicate higher activity (see color bar at right). (B) Time course of normalized border-ownership cell activity for the preferred side-of-figure (red) and non-preferred side-of-figure (blue) for the receptive field marked by the yellow circle in panel A.
 % Here, the preferred side-of-figure is to the right.
 (C) Timing of the  normalized border-ownership signal (red) and the edge signal (black).
 % The BOS signal is defined as the difference in activities of the two opposing pairs of border-ownership cells in panel B. The edge signal is defined as the sum of the activities of the two border-ownership cells.
@@ -437,7 +437,7 @@ latencies]{Craft_etal07}.
 \includegraphics[width=0.75\textwidth]{Contour/figs/Fig7.eps}
 \makeatletter
 \let\@currsize\normalsize
-\caption[Figure-ground segregation in the presence of noise]{Figure-ground segregation of a square object with aligned contour elements (top row) and with noise contour elements (top row). Shown are (left to right) the input stimulus, the edge cell activity (E), the border ownership assignment along edges (shown as the vector modulation index  $\overrightarrow{\mathbf{v}}$, section~\ref{sec:vmi}), the object grouping  neuron activity $(G_o)$ and the contour grouping activity $(G_c)$. Activities are normalized within each map, and warmer colors indicate higher activity (see color bar at right).}
+\caption[Figure-ground segregation in the presence of noise]{Figure-ground segregation of a square object with aligned contour elements (top row) and with noise contour elements (top row). Shown are (left to right) the input stimulus, the edge cell activity (E), the border-ownership assignment along edges (shown as the vector modulation index  $\overrightarrow{\mathbf{v}}$, section~\ref{sec:vmi}), the object grouping  neuron activity $(G_o)$ and the contour grouping activity $(G_c)$. Activities are normalized within each map, and warmer colors indicate higher activity (see color bar at right).}
 \label{Fig:Square_Noise}
 \end{figure}
 
@@ -464,7 +464,7 @@ procedure, where the edges of our figure are defined by contour elements instead
 \subsection{Interaction between border-ownership assignment and attention} 
 \label{sec:BOS-att}
 
-Although border ownership selectivity emerges independently of attention~\citep{Qiu_etal07}, attention may help to facilitate figure-ground segregation in the presence of noise.  For the square figure with noise, we found that in our model, attention increases the responses of neurons along the edge of the figure (unpaired t-test, $p=\num{2.32e-59}$) and suppresses those in the center (unpaired t-test,
+Although border-ownership selectivity emerges independently of attention~\citep{Qiu_etal07}, attention may help to facilitate figure-ground segregation in the presence of noise.  For the square figure with noise, we found that in our model, attention increases the responses of neurons along the edge of the figure (unpaired t-test, $p=\num{2.32e-59}$) and suppresses those in the center (unpaired t-test,
 $p=\num{3.42e-8}$). In addition, attention increases border-ownership
 modulation along the edge of the figure (unpaired t-test, $p=\num{1.37e-143}$) and increases the activity of object grouping
 neurons in the center of the figure (unpaired t-test, $p=\num{1.53e-239}$). All effects were small but highly significant,
@@ -496,7 +496,7 @@ These results demonstrate that the object and contour grouping neurons
 are able to assist with early level segmentation of objects in noise
 and clutter.  Previous experimental studies have only tested squares
 without noise, although the effect of figures defined by broken contours has been investigated before~\citep{Zhang_vonderHeydt10}.
-Our results predict that border ownership assignment and grouping are
+Our results predict that border-ownership assignment and grouping are
 robust even in the presence of noise,  clutter, and interruptions in figure borders, and that attention may further aid this process.
 
 \section{Discussion}
@@ -516,7 +516,7 @@ predictions.}
 \subsection{Model predictions}
 
 Our model predicts that attentional modulation is specific to the
-attended contour or object, rather than being defined purely spatially. This is possible because, in our model, attention modifies firing rates of grouping cells, rather than of elementary feature-coding cells. Attending to the contour increases contour-response $d'$ in both V1 and V4, consistent with experimental results showing increased contour-related responses after animals had been trained to perform a contour detection task, compared to when they performed a separate set of tasks in which the contour was behaviorally irrelevant~\citep{Li_etal08a}. We note that \cite{Li_etal08a} only studied neural responses in V1, while our model makes predictions about attention-related changes to contour-response $d'$ in both V1 and V4.  We also find that attention modulates border ownership activity in V2 in an object-based manner. As a result, our model makes predictions about neural activity in visual areas V1, V2, and V4 across different stimuli and tasks.
+attended contour or object, rather than being defined purely spatially. This is possible because, in our model, attention modifies firing rates of grouping cells, rather than of elementary feature-coding cells. Attending to the contour increases contour-response $d'$ in both V1 and V4, consistent with experimental results showing increased contour-related responses after animals had been trained to perform a contour detection task, compared to when they performed a separate set of tasks in which the contour was behaviorally irrelevant~\citep{Li_etal08a}. We note that \cite{Li_etal08a} only studied neural responses in V1, while our model makes predictions about attention-related changes to contour-response $d'$ in both V1 and V4.  We also find that attention modulates border-ownership activity in V2 in an object-based manner. As a result, our model makes predictions about neural activity in visual areas V1, V2, and V4 across different stimuli and tasks.
 
 We predict that the interaction of modulatory feedback from grouping
 cells with local inhibition enhances the representation of the figure
@@ -600,7 +600,7 @@ Complementarily, feature-based attention acts broadly across the visual scene an
 
 Our model seeks to reproduce three different sets of experimental results, while making testable predictions for future experiments. 
 We only included one scale of grouping neurons for simplicity, although 
-multiple scales of grouping neurons are needed to account for the diversity in the scale of objects in the real world. Our model also assigns distinct roles to the different visual areas,  edge processing in V1, border ownership assignment in V2, and grouping of contours and objects in V4. However, the physiological properties of neurons in early visual areas have not been fully characterized, and neurons in these different areas may have additional ranges of selectivity than the ones we assign them in our model. Finally, our model operates on artificial images composed of simple shapes such as contours or square
+multiple scales of grouping neurons are needed to account for the diversity in the scale of objects in the real world. Our model also assigns distinct roles to the different visual areas,  edge processing in V1, border-ownership assignment in V2, and grouping of contours and objects in V4. However, the physiological properties of neurons in early visual areas have not been fully characterized, and neurons in these different areas may have additional ranges of selectivity than the ones we assign them in our model. Finally, our model operates on artificial images composed of simple shapes such as contours or square
 figures. In order to truly understand grouping mechanisms in natural
 vision, our model must also be able to operate on natural images as input, where the number of potential objects and features are much
 richer. We propose such a model in the next chapter.
