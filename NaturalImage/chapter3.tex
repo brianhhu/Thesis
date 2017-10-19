@@ -4,50 +4,24 @@
 
 \section{Introduction}
 
-Figure-ground organization is critical for visual understanding of the world around us. The process typically involves some form of segmentation, or dividing the input image into regions corresponding to objects and background. The border between any two regions is usually ``owned" by a single object, and the correct assignment of each border to its corresponding object is thought to be a precursor to scene understanding.
-However, this task is difficult due to the clutter, occlusion, and wide variety of features present in natural scenes. This problem has long fascinated researchers, including those from the fields of psychology~\citep{Wertheimer23,Koffka35}, neuroscience~\citep{Zhou_etal00,Craft_etal07}, and computer vision~\citep{Sajda_Finkel95,Ren_etal06,Teo_etal15,Wang_Yuille16}.
+Figure-ground organization is critical for visual understanding of the world around us. The process typically involves some form of segmentation, or dividing the input image into regions corresponding to objects and background. The border between any two regions is usually ``owned" by a single object, and the correct assignment of each border to its corresponding object is thought to be a precursor to scene understanding. However, this task is difficult due to the clutter, occlusion, and wide variety of features present in natural scenes. This problem has long fascinated researchers, including those from the fields of psychology~\citep{Wertheimer23,Koffka35}, neuroscience~\citep{Zhou_etal00,Craft_etal07}, and computer vision~\citep{Sajda_Finkel95,Ren_etal06,Teo_etal15,Wang_Yuille16}.
 Despite this long line of research, our understanding of the neural basis of figure-ground organization remains surprisingly limited.
 
 A key insight from neuroscience was the discovery of border-ownership
 cells. Border-ownership selectivity is a property of a majority of the
 neurons in V2, which encodes where an object is located relative to the
-neuron's receptive field~\citep{Zhou_etal00}.
-When the edge of an object is presented in its receptive field (RF), a border-ownership cell will respond with different firing rates depending on where the object is located.
-For the example cell shown in Figure~\ref{Fig:experiments}A, objects placed to the upper right of the cell's RF (stimuli outlined in red) cause the cell to fire at a higher firing rate compared to objects placed to the lower left of the cell's RF (stimuli outlined in blue). Importantly, the local stimulus within the cell's RF is identical in both cases. Border-ownership coding has been studied using a wide variety of artificial stimuli, including those defined by luminance~\citep{Zhou_etal00}, motion~\citep{vonderHeydt_etal03a}, disparity~\citep{Qiu_vonderHeydt05}, and transparency~\citep{Qiu_vonderHeydt07}, and more recently, natural stimuli such as faces~\citep{Hesse_Tsao16,Ko_vonderHeydt17} and complex natural scenes~\citep{Williford_vonderHeydt16}.
+neuron's receptive field~\citep{Zhou_etal00}. When the edge of an object is presented in its receptive field (RF), a border-ownership cell will respond with different firing rates depending on where the object is located. For the example cell shown in Figure~\ref{Fig:experiments}A, objects placed to the upper right of the cell's RF (stimuli outlined in red) cause the cell to fire at a higher firing rate compared to objects placed to the lower left of the cell's RF (stimuli outlined in blue). Importantly, the local stimulus within the cell's RF is identical in both cases. Border-ownership coding has been studied using a wide variety of artificial stimuli, including those defined by luminance~\citep{Zhou_etal00}, motion~\citep{vonderHeydt_etal03a}, disparity~\citep{Qiu_vonderHeydt05}, and transparency~\citep{Qiu_vonderHeydt07}, and more recently, natural stimuli such as faces~\citep{Hesse_Tsao16,Ko_vonderHeydt17} and complex natural scenes~\citep{Williford_vonderHeydt16}.
 
- To explain this phenomenon, some computational models assume that
-border-ownership coding is achieved purely by feedforward mechanisms, such as the
-asymmetric organization of surrounds \citep{Nishimura_Sakai04,
- Nishimura_Sakai05,Sakai_etal12} or global surround inhibition~\citep{Super_etal10}.
- Pure feedforward models predict similar latencies of the border-ownership signal regardless of the stimulus, but recent results show that border-ownership assignment of stimuli with illusory contours is delayed by $\sim30$ms compared to full stimuli~\citep{Hesse_Tsao16}.
-  Other models propose
- propagation of neural
-activity along horizontal connections within early visual
-areas using a diffusion-like process \citep{Grossberg94, Sajda_Finkel95,
-Baek_Sajda05, Kikuchi_Akashi01, Pao_etal99,
-Zhaoping05,Zucker12}. However, these models have difficulties explaining the
-fast establishment of border ownership which appears about 25ms after
-the first stimulus response \citep{Zhou_etal00}.
- Propagation along horizontal fibers over the
-distances used in the experiments would imply a delay of at least $\sim70$ms \citep[][based on the conduction velocity of horizontal fibers in primate V1 cortex; we are not aware of corresponding data for V2]{Girard_etal01}. Furthermore, such models are difficult to reconcile with the observation that the time course of border-ownership coding is largely independent of figure
+To explain this phenomenon, some computational models assume that
+border-ownership coding is achieved purely by feedforward mechanisms, such as the asymmetric organization of surrounds \citep{Nishimura_Sakai04,Nishimura_Sakai05,Sakai_etal12} or global surround inhibition~\citep{Super_etal10}. Pure feedforward models predict similar latencies of the border-ownership signal regardless of the stimulus, but recent results show that border-ownership assignment of stimuli with illusory contours is delayed by $\sim30$ms compared to full stimuli~\citep{Hesse_Tsao16}. Other models propose  propagation of neural activity along horizontal connections within early visual
+areas using a diffusion-like process \citep{Grossberg94,Sajda_Finkel95,
+Baek_Sajda05, Kikuchi_Akashi01, Pao_etal99,Zhaoping05,Zucker12}. However, these models have difficulties explaining the fast establishment of border ownership which appears about 25ms after
+the first stimulus response \citep{Zhou_etal00}.  Propagation along horizontal fibers over the distances used in the experiments would imply a delay of at least $\sim70$ms \citep[][based on the conduction velocity of horizontal fibers in primate V1 cortex; we are not aware of corresponding data for V2]{Girard_etal01}. Furthermore, such models are difficult to reconcile with the observation that the time course of border-ownership coding is largely independent of figure
 size~\citep{Sugihara_etal11}.
 
 An alternative computational model involves populations of grouping
-($\mathcal{G}$) cells which explicitly represent (in their firing rates) the
-perceptual organization of the visual
-scene~\citep{Craft_etal07,Mihalas_etal11b}. These cells are reciprocally connected to
-border-ownership selective ($\mathcal{B}$) cells through feedforward and
-feedback connections.  The combined activation of grouping cells and cells
-signaling local features represents the presence of a ``proto-object''
-\citep[we borrow this term from the perception literature;][]{Rensink00a},
-resulting in a structured perceptual
-organization of the scene. 
-This proto-object based approach is consistent with psychophysical and
-neurophysiological studies
-\citep[\eg][]{Duncan84,Egly_etal94,Scholl01,Kimchi_etal07,Qiu_etal07,Ho_Yeh09,Poort_etal12}. A feedforward version of this model
-has been applied to natural scenes, where it outperformed other models
-in predicting the locations of human eye
-fixations~\citep{Russell_etal14}.
+($\mathcal{G}$) cells which explicitly represent (in their firing rates) the perceptual organization of the visual scene~\citep{Craft_etal07,Mihalas_etal11b}. These cells are reciprocally connected to border-ownership selective ($\mathcal{B}$) cells through feedforward and feedback connections. The combined activation of grouping cells and cells signaling local features represents the presence of a ``proto-object''~\citep[we borrow this term from the perception literature;][]{Rensink00a}, resulting in a structured perceptual organization of the scene. This proto-object based approach is consistent with psychophysical and neurophysiological studies
+\citep[\eg][]{Duncan84,Egly_etal94,Scholl01,Kimchi_etal07,Qiu_etal07,Ho_Yeh09,Poort_etal12}. A feedforward version of this model has been applied to natural scenes, where it outperformed other models in predicting the locations of human eye fixations~\citep{Russell_etal14}.
 
 \begin{figure}[t!]
 \centering
@@ -55,12 +29,11 @@ fixations~\citep{Russell_etal14}.
 \makeatletter
 \let\@currsize\normalsize
 % simplify caption
-\caption[Consistency of border-ownership coding]{Consistency of border-ownership coding. (A) Border-ownership coding for an example cell. The cell has a preference for objects located to the upper right of its receptive field (RF) on both the square and natural scene stimuli, as indicated by higher firing rates. Red circles indicate the size and location of the cell's RF. Stimuli with objects to the upper right of the cell's RF (``preferred" side) are outlined in red, while stimuli with objects to the lower left of the cell's RF (``non-preferred" side) are outlined in blue. The cell's postimulus time histogram (PSTH) for the preferred side is shown by the red trace, while the PSTH for the non-preferred side is shown by the blue trace. Shading indicates 95\% confidence intervals.}
+\caption[Consistency of border-ownership coding across square and natural scene stimuli]{Consistency of border-ownership coding. (A) Border-ownership coding for an example cell. The cell has a preference for objects located to the upper right of its receptive field (RF) on both the square and natural scene stimuli, as indicated by higher firing rates. Red circles indicate the size and location of the cell's RF. Stimuli with objects to the upper right of the cell's RF (``preferred" side) are outlined in red, while stimuli with objects to the lower left of the cell's RF (``non-preferred" side) are outlined in blue. The cell's postimulus time histogram (PSTH) for the preferred side is shown by the red trace, while the PSTH for the non-preferred side is shown by the blue trace. Shading indicates 95\% confidence intervals.}
 \label{Fig:experiments}
 \end{figure}
 
-A substantial fraction of neurons show consistent border-ownership coding across natural scenes that matches their preference on artificial stimuli, with the timing of border-ownership signals being similar for both types of stimuli (Figure~\ref{Fig:experiments}B). However, with the exception of a single computational model~\citep{Sakai_etal12}, we are not aware of any models that have quantitatively tested border-ownership selectivity on natural scenes. Here, we propose a model based on recurrent connections that is able to explain border-ownership coding in natural scenes. We compare our model results with experimental results, and find a good match both in the timing of the border-ownership signals as well as the consistency of border-ownership coding across scenes.
-In order to compare our model with other computer vision approaches, we also benchmarked our model on a standard contour detection and figure-ground assignment dataset~\citep{Martin_etal01} and achieve performance comparable to these other approaches.
+A substantial fraction of neurons show consistent border-ownership coding across natural scenes that matches their preference on artificial stimuli, with the timing of border-ownership signals being similar for both types of stimuli (Figure~\ref{Fig:experiments}B). However, with the exception of a single computational model~\citep{Sakai_etal12}, we are not aware of any models that have quantitatively tested border-ownership selectivity on natural scenes. Here, we propose a model based on recurrent connections that is able to explain border-ownership coding in natural scenes. We compare our model results with experimental results, and find a good match both in the timing of the border-ownership signals as well as the consistency of border-ownership coding across scenes. In order to compare our model with other computer vision approaches, we also benchmarked our model on a standard contour detection and figure-ground assignment dataset~\citep{Martin_etal01} and achieve performance comparable to these other approaches.
 
 \begin{figure}[t!]
 \centering
@@ -68,8 +41,7 @@ In order to compare our model with other computer vision approaches, we also ben
 \makeatletter
 \let\@currsize\normalsize
 % simplify caption
-\caption[Overview of the model for figure-ground organization of natural images]{Overview of the model. The image is first successively downsampled in half-octaves to create an image pyramid (only three scales are shown). The same set of feedforward and feedback grouping operations is then applied at each level of the pyramid to achieve scale invariance. Feedback from grouping cells is combined across scales so that
-global context information can influence figure-ground segmentation. The model is run for a total of 10 iterations (one iteration includes a feedforward and a feedback pass through the model), and our final results are based on neural activity from the highest resolution scale of the image pyramid.}
+\caption[Overview of the model for figure-ground organization of natural scenes]{Overview of the model. The image is first successively downsampled in half-octaves to create an image pyramid (only three scales are shown). The same set of feedforward and feedback grouping operations is then applied at each level of the pyramid to achieve scale invariance. Feedback from grouping cells is combined across scales so that global context information can influence figure-ground segmentation. The model is run for a total of 10 iterations (one iteration includes a feedforward and a feedback pass through the model), and our final results are based on neural activity from the highest resolution scale of the image pyramid.}
 \label{Fig:model_overview}
 \end{figure}
 
@@ -77,52 +49,21 @@ global context information can influence figure-ground segmentation. The model i
 \label{sec:model}
 \subsection{Model Structure}
 
-Our approach is an extension of the 
-proto-object based model of saliency proposed by
-\cite{Russell_etal14} and includes recurrent connections for figure-ground assignment.
-At the core of our model is a grouping mechanism which estimates figure-ground assignment within the input image using proto-objects of varying spatial scales and feature types. These proto-objects provide a coarse segmentation of the image through perceptual organization of the scene into regions corresponding to objects and background.
+Our approach is an extension of the proto-object based model of saliency proposed by~\cite{Russell_etal14} and includes recurrent connections for figure-ground assignment. At the core of our model is a grouping mechanism which estimates figure-ground assignment within the input image using proto-objects of varying spatial scales and feature types. These proto-objects provide a coarse segmentation of the image through perceptual organization of the scene into regions corresponding to objects and background.
  
-To achieve scale invariance, the algorithm
-successively
-downsamples the input image
- in steps of $\sqrt2$
-to form an image pyramid spanning five octaves (Figure~\ref{Fig:model_overview}). The $k$th level
-of the pyramid is denoted using the superscript $k$. Unless explicitly
-stated, any operation applied to the pyramid is applied independently to each level and each feature type. Each layer of the network represents neural
-activity, which can either be propagated from one layer to another via
-feedforward or feedback connections since our model is recurrent. We use a filter-based approach, where the receptive fields of neurons are
-described by kernels and the correlation operation is used to calculate the neural response to an input. The
-model was implemented using MATLAB (Mathworks, Natick, MA,
+To achieve scale invariance, the algorithm successively downsamples the input image in steps of $\sqrt2$ to form an image pyramid spanning five octaves (Figure~\ref{Fig:model_overview}). The $k$th level of the pyramid is denoted using the superscript $k$. Unless explicitly stated, any operation applied to the pyramid is applied independently to each level and each feature type. Each layer of the network represents neural activity, which can either be propagated from one layer to another via feedforward or feedback connections since our model is recurrent. We use a filter-based approach, where the receptive fields of neurons are described by kernels and the correlation operation is used to calculate the neural response to an input. The model was implemented using MATLAB (Mathworks, Natick, MA,
 USA).
 
-The first stage of the model
-extracts edges from the input image
-based on either luminance or color information (Figure~\ref{Fig:model_overview}).
- We use the combination of receptive fields (CORF) operator, which is a
-model of V1 simple cells with push-pull
-inhibition~\citep{Azzopardi_etal14}. We chose the CORF operator due to its texture suppression properties, which can be beneficial
-when applied to natural images. Our model does not require a specific edge detection method and could be modified to use other front-end edge detectors (\eg Gabor filters).
-In the following, we only describe model computations on the luminance channel, but the exact same computations are also performed on the two color channels (\ie red-green and blue-yellow). As in~\citet{Russell_etal14}, the color channels were computed according to the methods outlined in the original~\citet{Itti_etal98a} visual saliency model.
+The first stage of the model extracts edges from the input image based on either luminance or color information (Figure~\ref{Fig:model_overview}). We use the combination of receptive fields (CORF) operator, which is a model of V1 simple cells with push-pull inhibition~\citep{Azzopardi_etal14}. We chose the CORF operator due to its texture suppression properties, which can be beneficial when applied to natural images. Our model does not require a specific edge detection method and could be modified to use other front-end edge detectors (\eg Gabor filters). In the following, we only describe model computations on the luminance channel, but the exact same computations are also performed on the two color channels (\ie red-green and blue-yellow). As in~\citet{Russell_etal14}, the color channels were computed according to the methods outlined in the original~\citet{Itti_etal98a} visual saliency model.
 
 For a given scale $k$, the output of the edge detection stage of the model are simple ($\mathcal{S}$) cells of eight different orientations $\theta$ and two contrast polarities, termed $\mathcal{S}^k_{\theta,L}(x,y)$ and $\mathcal{S}^k_{\theta,D}(x,y)$ (\ie for light-dark edges $L$ and dark-light edges $D$). For the two color channels, the edge polarities are determined by color-opponent responses (\eg red-green edges and green-red edges). Only the signal strength at the optimal orientation at each spatial location was used as input to the network. This simplification significantly reduces computation time by eliminating the calculation of responses for the non-optimum orientations.
 
 In contrast to previous approaches which combine simple cell responses into a contrast-invariant complex cell response~\citep{Russell_etal14}, we keep the contrast-sensitive
-$\mathcal{S}$
-cell responses as they provide an informative cue for grouping along object edges. Objects tend to maintain similar contrast polarity along their boundaries, which may be useful for accurately determining figure-ground relationships. As a result, we have two sets of responses at each layer of our network corresponding to the two different types of contrast polarity.
+$\mathcal{S}$ cell responses as they provide an informative cue for grouping along object edges. Objects tend to maintain similar contrast polarity along their boundaries, which may be useful for accurately determining figure-ground relationships. As a result, we have two sets of responses at each layer of our network corresponding to the two different types of contrast polarity.
 
-Next, for a given angle~$\theta$, each 
-$\mathcal{S}$
-cell
- feeds into an opposing pair of border-ownership ($\mathcal{B}$) cells.
-As a result, 
-$\mathcal{B}$
-cells are also sensitive to contrast polarity, which is consistent with experimental findings~\citep{Zhou_etal00}.
-For each contrast polarity, we used one-to-one connections between 
-$\mathcal{S}$
-cells of one orientation and the corresponding pair of
-$\mathcal{B}$
-cells with the same preferred orientation, but opposing side-of-figure preferences.
-
+Next, for a given angle~$\theta$, each $\mathcal{S}$ cell feeds into an opposing pair of border-ownership ($\mathcal{B}$) cells. As a result, $\mathcal{B}$ cells are also sensitive to contrast polarity, which is consistent with experimental findings~\citep{Zhou_etal00}.
+For each contrast polarity, we used one-to-one connections between $\mathcal{S}$ cells of one orientation and the corresponding pair of
+$\mathcal{B}$ cells with the same preferred orientation, but opposing side-of-figure preferences.
 \begin{equation}
 \begin{split}
 \mathcal{B}^k_{\theta,L} = \mathcal{S}^k_{\theta,L}(x,y)\\
@@ -136,20 +77,8 @@ cells with the same preferred orientation, but opposing side-of-figure preferenc
 \end{split}
 \end{equation}
 
-To infer whether the edges in $\mathcal{B}^k_{\theta,L}(x,y)$ and $\mathcal{B}^k_{\theta,D}(x,y)$ belong to
-figure or ground, knowledge of proto-objects in the scene is required. This
-context information is retrieved from a
-grouping
-mechanism (Figure~\ref{Fig:model_overview}). Grouping cells ($\mathcal{G}$) integrate information from
-$\mathcal{B}$
-cells, and 
-either respond to light objects on dark backgrounds, $\mathcal{G}^k_{L}(x,y)$, or dark objects on light backgrounds, $\mathcal{G}^k_{D}(x,y)$. This computation is similar to the use of center-surround cells in a feedforward version of the model~\citep{Russell_etal14}. In contrast to their approach, our model does not require an additional class of center-surround cells, but instead allows
-$\mathcal{G}$ cells
-to directly integrate local feature information from
-$\mathcal{B}$
-cells and then bias the activity of these same cells using reciprocal feedback connections. Our model runs in an iterative manner, with one iteration corresponding to a feedforward and feedback pass through the model.
-$\mathcal{G}$
-cell activity is combined across scales before each feedback pass, which allows the model to more accurately determine figure-ground assignment in a scale-invariant manner (Figure~\ref{Fig:model_overview}).
+To infer whether the edges in $\mathcal{B}^k_{\theta,L}(x,y)$ and $\mathcal{B}^k_{\theta,D}(x,y)$ belong to figure or ground, knowledge of proto-objects in the scene is required. This context information is retrieved from a grouping mechanism (Figure~\ref{Fig:model_overview}). Grouping cells ($\mathcal{G}$) integrate information from $\mathcal{B}$
+cells, and either respond to light objects on dark backgrounds, $\mathcal{G}^k_{L}(x,y)$, or dark objects on light backgrounds, $\mathcal{G}^k_{D}(x,y)$. This computation is similar to the use of center-surround cells in a feedforward version of the model~\citep{Russell_etal14}. In contrast to their approach, our model does not require an additional class of center-surround cells, but instead allows $\mathcal{G}$ cells to directly integrate local feature information from $\mathcal{B}$ cells and then bias the activity of these same cells using reciprocal feedback connections. Our model runs in an iterative manner, with one iteration corresponding to a feedforward and feedback pass through the model. $\mathcal{G}$ cell activity is combined across scales before each feedback pass, which allows the model to more accurately determine figure-ground assignment in a scale-invariant manner (Figure~\ref{Fig:model_overview}).
 
 \begin{figure}[t!]
 \centering
@@ -157,32 +86,11 @@ cell activity is combined across scales before each feedback pass, which allows 
 \makeatletter
 \let\@currsize\normalsize
 % simplify caption
-\caption[Structure of the recurrent neural network model for figure-ground organization of natural images]{Structure of the recurrent neural network. Each circle stands for a
-  population of neurons with similar receptive fields and response
-  properties.  Red and blue lines represent excitatory and inhibitory projections,
-  respectively. Solid and dashed lines represent purely feedforward and reciprocal feedforward/feedback connections, respectively. Edges and other local features of a figure (black square outline) activate simple cells ($\mathcal{S}$) whose receptive
-  fields are shown by green ellipses. $\mathcal{S}$ cells project to border-ownership cells ($\mathcal{B}$) that have the same preferred orientation and
-  retinotopic position as the $\mathcal{S}$ cells they receive input
-  from. However, for each location and preferred orientation there are
-  two $\mathcal{B}$ cell populations with opposite side-of-figure preferences, in
-  the example shown $\mathcal{B}_{\pi}$ whose neurons respond preferentially when
-  the foreground object is to the left of their receptive fields and
-  $\mathcal{B}_{0}$ whose members prefer the foreground to the right side of
-  their receptive fields. $\mathcal{B}$ cells have reciprocal, feedforward
-  excitatory and feedback modulatory connections with grouping cells, $\mathcal{G}$, which integrate global context information about objects. The receptive field of a $\mathcal{G}$ cell is shown by the purple annulus. Opposing $\mathcal{B}$ cells compete indirectly {\em via}
-  feedback inhibition
-  from $\mathcal{G}$ cells, which bias their activity and thus generate the border-ownership signal used to determine figure-ground assignment.}
+\caption[Structure of the recurrent neural network model for figure-ground organization of natural images]{Structure of the recurrent neural network. Each circle stands for a population of neurons with similar receptive fields and response properties. Red and blue lines represent excitatory and inhibitory projections, respectively. Solid and dashed lines represent purely feedforward and reciprocal feedforward/feedback connections, respectively. Edges and other local features of a figure (black square outline) activate simple cells ($\mathcal{S}$) whose receptive fields are shown by green ellipses. $\mathcal{S}$ cells project to border-ownership cells ($\mathcal{B}$) that have the same preferred orientation and retinotopic position as the $\mathcal{S}$ cells they receive input  from. However, for each location and preferred orientation there are  two $\mathcal{B}$ cell populations with opposite side-of-figure preferences, in the example shown $\mathcal{B}_{\pi}$ whose neurons respond preferentially when the foreground object is to the left of their receptive fields and $\mathcal{B}_{0}$ whose members prefer the foreground to the right side of their receptive fields. $\mathcal{B}$ cells have reciprocal, feedforward excitatory and feedback modulatory connections with grouping cells, $\mathcal{G}$, which integrate global context information about objects. The receptive field of a $\mathcal{G}$ cell is shown by the purple annulus. Opposing $\mathcal{B}$ cells compete indirectly {\em via} feedback inhibition  from $\mathcal{G}$ cells, which bias their activity and thus generate the border-ownership signal used to determine figure-ground assignment.}
 \label{Fig:model}
 \end{figure}
 
-A more detailed view of the structure of our model is shown in Figure~\ref{Fig:model}.
-$\mathcal{G}$
-cells integrate the 
- $\mathcal{B}$ cell activity
-in an annular fashion. This allows $\mathcal{G}$ cells to show
-preference for objects whose borders exhibit the Gestalt principles of
-continuity and proximity. $\mathcal{G}$
-cell activity is defined according to 
+A more detailed view of the structure of our model is shown in Figure~\ref{Fig:model}. $\mathcal{G}$ cells integrate the $\mathcal{B}$ cell activity in an annular fashion. This allows $\mathcal{G}$ cells to show preference for objects whose borders exhibit the Gestalt principles of continuity and proximity. $\mathcal{G}$ cell activity is defined according to
 \begin{equation}
 \begin{split}
 \mathcal{G}_{L}^k(x,y) = &\Bigg\lfloor\sum_\theta
@@ -197,7 +105,9 @@ cell activity is defined according to
 \end{split}
 \label{eq:G_D}
 \end{equation}
-where where $\lfloor \cdot \rfloor$ is a half-wave rectification, and $\ast$ is the correlation operator defined as
+
+where $\lfloor \cdot \rfloor$ is a half-wave rectification, and $\ast$ is the correlation operator defined as
+
 \begin{equation}
 f(x,y)\ast g(x,y) = \sum_{m=-\infty}^{\infty}\sum_{n=-\infty}^{\infty}f(m,n)g(x+m,y+n)
 \end{equation}
@@ -207,24 +117,15 @@ $v_{\theta}$ is generated using the von Mises distribution as follows
 v_\theta(x,y) = \frac{\exp\left[(\sqrt{x^2+y^2}-R_0)\cos(\tan^{-1}(\frac{y}{x})-\theta+\frac{\pi}{2})\right]}{2\pi I_0(\sqrt{x^2+y^2}-R_0)}
 \label{eq:vonMises}
 \end{equation}
-where $R_0$ is the radius of the grouping cell receptive field, set to 2 pixels, and
-$\theta$ is the desired angle of the mask. The factor $\frac{\pi}{2}$
-rotates the mask to ensure it is correctly aligned with the edge
-cells. $I_0$ is the modified Bessel function of the first kind.
-$v_\theta$ is then normalized according to
+
+where $R_0$ is the radius of the grouping cell receptive field, set to 2 pixels, and $\theta$ is the desired angle of the mask. The factor $\frac{\pi}{2}$ rotates the mask to ensure it is correctly aligned with the edge cells. $I_0$ is the modified Bessel function of the first kind. $v_\theta$ is then normalized according to
 \begin{equation}
 v_\theta(x,y) = \frac{v_\theta(x,y)}{\max(v_\theta(x,y))}
 \end{equation}
 
-On the first iteration, since there is no difference in activity between each pair of 
-$\mathcal{B}$
-cells as they receive the same initial bottom-up input, we omit the inhibition by the non-preferred
-$\mathcal{B}$
-cells and only use the activity of the preferred
-$\mathcal{B}$
-cells (eqs.~\ref{eq:G_L} and~\ref{eq:G_D}). On subsequent iterations, we include the inhibitory term. We also implement a simple form of local inhibition between the two 
-grouping pyramids, $\mathcal{G}^k_{L}(x,y)$ and $\mathcal{G}^k_{D}(x,y)$. At each spatial location, only one type of $\mathcal{G}$ cell should be active, representing either a light or dark object at that location. For each level of the pyramid $k$, we perform a max operation as follows
-
+On the first iteration, since there is no difference in activity between each pair of $\mathcal{B}$ cells as they receive the same initial bottom-up input, we omit the inhibition by the non-preferred
+$\mathcal{B}$ cells and only use the activity of the preferred
+$\mathcal{B}$ cells (eqs.~\ref{eq:G_L} and~\ref{eq:G_D}). On subsequent iterations, we include the inhibitory term. We also implement a simple form of local inhibition between the two grouping pyramids, $\mathcal{G}^k_{L}(x,y)$ and $\mathcal{G}^k_{D}(x,y)$. At each spatial location, only one type of $\mathcal{G}$ cell should be active, representing either a light or dark object at that location. For each level of the pyramid $k$, we perform a max operation as follows
 \begin{equation}
 	\mathcal{G}^k_{L}(x,y)=
 	\begin{cases}
@@ -240,51 +141,38 @@ grouping pyramids, $\mathcal{G}^k_{L}(x,y)$ and $\mathcal{G}^k_{D}(x,y)$. At eac
 	\end{cases}\\
 \end{equation}
 
-%
 Feedback from $\mathcal{G}$ cells to $\mathcal{B}$ cells is used to bias the responses of the $\mathcal{B}$ cells to correctly signal figure-ground assignment. The feedback depends on the contrast polarity of the $\mathcal{G}$ cell and the $\mathcal{B}$ cell.
 
- $\mathcal{B}^k_{\theta,L}$, the border-ownership activity for a light object on a dark background is given by
- \begin{equation}
- \begin{split}
+$\mathcal{B}^k_{\theta,L}$, the border-ownership activity for a light object on a dark background is given by
+\begin{equation}
+\begin{split}
 \mathcal{B}^k_{\theta,L}(x,y) = &2\mathcal{S}^k_{\theta,L}(x,y)\\
             &\times\frac{1}{1+\exp\Big(-(\sum_{j\geq k}\frac{1}{2^{j-k}} v_{\theta+\pi}(x,y) \ast \mathcal{G}^j_{L}(x,y)-\sum_{j\geq k}\frac{1}{2^{j-k}} v_{\theta}(x,y) \ast \mathcal{G}^j_{D}(x,y))\Big)}
 \end{split}
 \label{eq:border-orientation1}
 \end{equation}
 
-and $\mathcal{B}^k_{\theta,D}$, the border-ownership activity for a dark object on a light background is given by
- \begin{equation}
- \begin{split}
+$\mathcal{B}^k_{\theta,D}$, the border-ownership activity for a dark object on a light background is given by
+\begin{equation}
+\begin{split}
 \mathcal{B}^k_{\theta,D}(x,y) = &2\mathcal{S}^k_{\theta,D}(x,y)\\
             &\times\frac{1}{1+\exp\Big(-(\sum_{j\geq k}\frac{1}{2^{j-k}} v_{\theta+\pi}(x,y) \ast \mathcal{G}^j_{D}(x,y)-\sum_{j\geq k}\frac{1}{2^{j-k}} v_{\theta}(x,y) \ast \mathcal{G}^j_{L}(x,y))\Big)}
 \end{split}
 \label{eq:border-orientation2}
 \end{equation}
-where $v_{\theta}$ is the kernel responsible for mapping object activity in the grouping pyramids back to the objects edges, and the term $2^{-j}$ normalizes the $v_{\theta}$ operator across scales. The logistic function in the equations above enforces a form of competition between
-$\mathcal{B}$
-cells such that their total activity is always conserved, and each
-$\mathcal{B}$
-cell has activity between the range of zero and two times their initial bottom-up input activity, $\mathcal{S}^k_{\theta}(x,y)$.
 
-In the equations above, feedback from $\mathcal{G}$ cells to $\mathcal{B}$ cells is contrast-sensitive. $\mathcal{B}$ cells receive excitatory feedback from $\mathcal{G}$ cells of the same contrast polarity on their preferred side and inhibitory feedback from $\mathcal{G}$ cells of the opposite contrast polarity on their non-preferred side. This is motivated by neurophysiological results which show that image fragments placed within the extra-classical receptive field of a border-ownership neuron can cause enhancement of the
-neuron's activity when placed on its preferred side,
-and suppression if placed on the non-preferred side
-\citep{Zhang_vonderHeydt10}. Furthermore, modulating the bottom-up $\mathcal{S}$ cell
-responses with $\mathcal{G}$ cell activity summed across spatial scales
-ensures that the $\mathcal{B}$ cell responses are scale-invariant. Neurophysiological results show border-ownership coding for stimuli of varying sizes, with the latency of the border-ownership signal being relatively independent of the size of the figure~\citep{Zhou_etal00,Sugihara_etal11}.
+where $v_{\theta}$ is the kernel responsible for mapping object activity in the grouping pyramids back to the objects edges, and the term $2^{-j}$ normalizes the $v_{\theta}$ operator across scales. The logistic function in the equations above enforces a form of competition between $\mathcal{B}$ cells such that their total activity is always conserved, and each $\mathcal{B}$ cell has activity between the range of zero and two times their initial bottom-up input activity, $\mathcal{S}^k_{\theta}(x,y)$.
 
-Figure-ground assignment should be robust for both light objects on dark backgrounds and dark objects on light backgrounds. In our model, this is achieved by computing $\mathcal{B}$ cell activity
-independently for each contrast polarity and then summing this activity to give
-a final border-ownership response independent of figure-ground contrast
-polarity. The $\mathcal{B}$ cell responses for light and dark objects are combined to give a contrast polarity invariant response
+In the equations above, feedback from $\mathcal{G}$ cells to $\mathcal{B}$ cells is contrast-sensitive. $\mathcal{B}$ cells receive excitatory feedback from $\mathcal{G}$ cells of the same contrast polarity on their preferred side and inhibitory feedback from $\mathcal{G}$ cells of the opposite contrast polarity on their non-preferred side. This is motivated by neurophysiological results which show that image fragments placed within the extra-classical receptive field of a border-ownership neuron can cause enhancement of the neuron's activity when placed on its preferred side, and suppression if placed on the non-preferred side \citep{Zhang_vonderHeydt10}. Furthermore, modulating the bottom-up $\mathcal{S}$ cell responses with $\mathcal{G}$ cell activity summed across spatial scales ensures that the $\mathcal{B}$ cell responses are scale-invariant. Neurophysiological results show border-ownership coding for stimuli of varying sizes, with the latency of the border-ownership signal being relatively independent of the size of the figure~\citep{Zhou_etal00,Sugihara_etal11}.
+
+Figure-ground assignment should be robust for both light objects on dark backgrounds and dark objects on light backgrounds. In our model, this is achieved by computing $\mathcal{B}$ cell activity independently for each contrast polarity and then summing this activity to give a final border-ownership response independent of figure-ground contrast polarity. The $\mathcal{B}$ cell responses for light and dark objects are combined to give a contrast polarity invariant response
 \begin{equation}
 \mathcal{B}^k_{\theta}(x,y) =
 \mathcal{B}^k_{\theta,L}(x,y)+\mathcal{B}^k_{\theta,D}(x,y)
 \label{eq:BOS}
 \end{equation}
-The sign of the difference $\mathcal{B}_{\theta}(x,y)-\mathcal{B}_{\theta+\pi}(x,y)$ determines the direction of border
-ownership at pixel $(x,y)$ and orientation $\theta$. Its magnitude
-gives a confidence measure for the strength of border ownership.
+
+The sign of the difference $\mathcal{B}_{\theta}(x,y)-\mathcal{B}_{\theta+\pi}(x,y)$ determines the direction of border ownership at pixel $(x,y)$ and orientation $\theta$. Its magnitude gives a confidence measure for the strength of border ownership.
 
 Similarly, the $\mathcal{G}$ cell responses for light and dark objects are combined to give a contrast polarity invariant response
 \begin{equation}
@@ -292,18 +180,15 @@ Similarly, the $\mathcal{G}$ cell responses for light and dark objects are combi
 \mathcal{G}^k_{L}(x,y)+\mathcal{G}^k_{D}(x,y)
 \label{eq:G}
 \end{equation}
-The $\mathcal{G}$ pyramid from eq.~\ref{eq:G_L} and eq.~\ref{eq:G_D}, summed across both the light and dark channels, along with the figure-ground assignments in the $\mathcal{B}$ cells, is the output of the grouping algorithm and provides a perceptual organization of the visual scene.
 
+The $\mathcal{G}$ pyramid from eq.~\ref{eq:G_L} and eq.~\ref{eq:G_D}, summed across both the light and dark channels, along with the figure-ground assignments in the $\mathcal{B}$ cells, is the output of the grouping algorithm and provides a perceptual organization of the visual scene.
 
 As mentioned previously, we use both luminance and color information from the image in order to perform the grouping operation. The same exact operations that were performed on the luminance channel are also performed on the two color channels. We combine the final outputs of the $\mathcal{B}$ and $\mathcal{G}$ cells with an 80\% weighting for the luminance channel and a 10\% weighting for both the red-green and blue-yellow color channels. This choice of weighting does not qualitatively change our results.
 
 \subsection{Model Implementation}
 \label{sec:implementation}
 
-All simulations were performed on a 
-300-core CPU cluster running Rocks 6.2 (Sidewinder), a Linux
-distribution intended for high-performance computing. This allowed us to independently
-run our model on different images, speeding up our testing time. We ran the model for a total of 10 iterations, with each iteration being one feedforward pass of $\mathcal{B}$ cell to $\mathcal{G}$ cell activity, followed by one feedback pass of $\mathcal{G}$ cell to $\mathcal{B}$ cell activity (Figure~\ref{Fig:model_overview}). We generally found that the model converged after a few iterations. The final $\mathcal{G}$ cell activity was summed across scales. Contour detection and figure-ground assignment results are computed from the population of $\mathcal{B}$ cells at the highest resolution level of the image pyramid, which had the same resolution as the input image. $\mathcal{B}$ cell activity is converted into a population vector code by summing the final activity across orientations, where the magnitude of the resulting vector represents the border ownership signal (or edge strength), and the direction of the vector provides a continuous figure-ground orientation label. For a given image, we normalize the border ownership signal at each pixel $(x,y)$ by the maximum border ownership signal across the entire image, such that the border ownership signal is bounded between -1 and +1.
+All simulations were performed on a 300-core CPU cluster running Rocks 6.2 (Sidewinder), a Linux distribution intended for high-performance computing. This allowed us to independently run our model on different images, speeding up our testing time. We ran the model for a total of 10 iterations, with each iteration being one feedforward pass of $\mathcal{B}$ cell to $\mathcal{G}$ cell activity, followed by one feedback pass of $\mathcal{G}$ cell to $\mathcal{B}$ cell activity (Figure~\ref{Fig:model_overview}). We generally found that the model converged after a few iterations. The final $\mathcal{G}$ cell activity was summed across scales. Contour detection and figure-ground assignment results are computed from the population of $\mathcal{B}$ cells at the highest resolution level of the image pyramid, which had the same resolution as the input image. $\mathcal{B}$ cell activity is converted into a population vector code by summing the final activity across orientations, where the magnitude of the resulting vector represents the border-ownership signal (or edge strength), and the direction of the vector provides a continuous figure-ground orientation label. For a given image, we normalize the border ownership signal at each pixel $(x,y)$ by the maximum border ownership signal across the entire image, such that the border ownership signal is bounded between -1 and +1.
 
 We benchmarked our model on the publicly available Berkeley Segementation Dataset \citep{Martin_etal01}. We did this in the context of two tasks: contour detection and figure-ground assignment. Each dataset includes 100 to 200 test images, and we report F-scores (harmonic mean of precision and recall) for the contour detection task and mean accuracy (percent of correctly labeled figure-ground edges) for figure-ground assignment task averaged over all test images. We used publicly available benchmarking code to do our analysis and comparisons with other approaches.
 
