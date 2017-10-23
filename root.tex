@@ -90,16 +90,16 @@
 
 
 % add your chapters, best way is to have separate TeX files for each chapter
-%\include{chapter0}
-%\include{Intro/chapter1}
-%\include{Contour/chapter2}
+\include{chapter0}
+\include{Intro/chapter1}
+\include{Contour/chapter2}
 \include{NaturalImage/chapter3}
-%\include{3D-Surface/chapter4}
-%\include{3D-Saliency/chapter5}
-%\include{conclusion}
+\include{3D-Surface/chapter4}
+\include{3D-Saliency/chapter5}
+\include{conclusion}
 
 \begin{appendices}
-%\include{appendix}
+\include{appendix}
 \end{appendices}
 
 %% REFERENCES
@@ -112,12 +112,12 @@
 \bibliographystyle{plainnat}
 \bibliography{niebase,niebase_supp} % include niebase_supp for other references
 
-%% bh Add CV to end of file (uncomment to include)
-%\makeatletter % needed to make TOC link correctly to CV
-%\newcommand*{\@pdfpagephantomchapter}[2][]{\edef\@currentHref{\AM@linkname.\AM@page}\addcontentsline{toc}{chapter}{#1}}
-%\makeatother
-%
-%\includepdf[pages=-,link,linkfit=FitH,addtotoc={1, pdfpagephantomchapter, 1, Curriculum Vitae, CV}]{CV/CV_Brian_Hu.pdf}
+% bh Add CV to end of file (uncomment to include)
+\makeatletter % needed to make TOC link correctly to CV
+\newcommand*{\@pdfpagephantomchapter}[2][]{\edef\@currentHref{\AM@linkname.\AM@page}\addcontentsline{toc}{chapter}{#1}}
+\makeatother
+
+\includepdf[pages=-,link,linkfit=FitH,addtotoc={1, pdfpagephantomchapter, 1, Curriculum Vitae, CV}]{CV/CV_Brian_Hu.pdf}
 
 
 \end{document}
